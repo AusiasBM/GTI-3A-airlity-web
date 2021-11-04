@@ -5,8 +5,10 @@ Para iniciar el servidor:
 
     $ npm run dev
 
-Para inciar mongoDB
-    $ brew services start mongodb-community@5.0
+Funciones Lógica Fake:
 
-Para parar MongoDB
-    $ brew services stop mongodb-community@5.0
+    obtenerTodasLasMediciones()
+
+        Esta función nos permite recoger de la API todas la medidas hechas que hayan en la misma.
+
+        

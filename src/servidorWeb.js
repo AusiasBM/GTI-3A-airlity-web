@@ -7,6 +7,7 @@ app.use( express.json() )
 app.set("name", "Servidor Web Airlity");
 app.set("port", process.env.port || port ); // Si el servidor asigna un purto se queda, sino le ponemos 3500
 
+// Mostramos la página web inicial
 app.use(express.static("public"));
 
 app.listen(app.get("port"), () => {

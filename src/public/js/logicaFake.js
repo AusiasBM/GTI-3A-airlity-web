@@ -6,7 +6,7 @@ peticionGet = false;
 function obtenerTodasLasMediciones(){
 
     // Hacemos la petición get
-    fetch(IP_PUERTO + '/api/todas-las-mediciones', {
+    fetch(IP_PUERTO + '/todasLasMediciones', {
         method : 'get', 
     })
     // Esperamos la respuesta

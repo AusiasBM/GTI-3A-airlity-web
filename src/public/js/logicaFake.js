@@ -39,15 +39,15 @@ function obtenerTodasLasMediciones(){
                     <div class="card-body">
                         <!--<h4 class="card-title">Id: ${element._id}</h4>-->
                         <p> 
-                            Medicion = ${element.medicion}
+                            Medicion = ${element.medida}
                             <br>
                             Tipo de medición = ${element.tipoMedicion}
                             <br>
                             Fecha = ${element.fecha}
                             <br>
-                            Latitud = ${element.lat}
+                            Latitud = ${element.latitud}
                             <br>
-                            Longitud = ${element.lng}
+                            Longitud = ${element.longitud}
                             <br>
                         </p>
                     </div>

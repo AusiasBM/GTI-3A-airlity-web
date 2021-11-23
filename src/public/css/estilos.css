@@ -1,3 +1,5 @@
+/* Ausias Bañuls Mahiques */
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
 
 *{
@@ -25,6 +27,16 @@ h1{
 
 #map {
     height: 100%;
+}
+
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
 }
 
 /* Aquí le decimos como será hasta que la página pase de 768px */

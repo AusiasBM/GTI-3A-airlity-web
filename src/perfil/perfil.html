@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Airlity | Perfil de usuario</title>
+    <!-- Cargando fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo-perfil.css">
+</head>
+<body>
+    
+    
+     
+     <!-- Encabezado ................................................................................... -->
+      
+    <header class="header">
+        <img src="imgs/logo_airlity_azul.png" width="200px" height="auto" alt="Logo Airlity">
+        <div class="links-header">
+            <a href="info.html">Atrás</a>
+        </div>
+    </header>
+    
+    <!-- Perfil de usuario .............................................................................. -->
+    
+    <div class="container">
+    
+    <div class="caja-perfil">
+       
+        <div class="row caja1">
+          <div class="foto-perfil  col-lg-3">
+              <img class="img-fluid mx-auto d-block"src="imgs/foto_usuario.jpg" alt="Foto perfil">
+          </div> 
+           <div class="nombre-caja1 col-lg-9">
+               <h3>Nombre y apellidos</h3>
+               <span class="text-muted">Usuario de Airlity</span>
+           </div>
+        </div>
+        
+        <div class="wrapper">
+            <form action="">
+               <div class="row nombre-apellidos">
+                <div class="inputBox col-md-6">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" value="Nombre" disabled>
+                </div>
+                <div class="inputBox col-md-6">
+                    <label for="apellido">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" value="Apellidos" disabled>
+                </div>
+               </div> 
+               <div class="row email-tlf">
+                <div class="inputBox col-md-6">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" value="correo@electronico.com" disabled>
+                </div>
+                <div class="inputBox col-md-6">
+                    <label for="tlf">Teléfono</label>
+                    <input type="text" id="tlf" name="tlf" value="692517123" disabled>
+                </div>
+               </div>
+               <div class="mac-btn text-center">
+                <div class="inputBox">
+                    <label for="nombre">Información del sensor</label>
+                    <span>MAC del sensor</span>
+                </div>
+                <div class="inputBox">
+                    <button type="submit" class="btn">GUARDAR CAMBIOS</button>
+                </div>
+               </div>
+               
+            </form>
+        </div>
+        
+    </div>
+    
+    </div> <!-- fin container .................... -->
+    
+    <!-- Carga de archivos JS -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+</body>
+</html>

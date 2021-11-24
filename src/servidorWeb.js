@@ -6,12 +6,12 @@
 
 const express = require('express')
 const app = express()
-const port = 8080
+const port = 3000
 
 app.use( express.json() )
 
 app.set("name", "Servidor Web Airlity");
-app.set("port", process.env.port || port ); // Si el servidor asigna un purto se queda, sino le ponemos 3500
+app.set("port", port ); // Si el servidor asigna un purto se queda, sino le ponemos 3500
 
 // Mostramos la página web inicial
 app.use(express.static("public"));

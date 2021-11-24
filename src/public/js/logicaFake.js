@@ -1,8 +1,18 @@
+/**
+ * @Autor Ausias Bañuls Mahiques
+ */
+
 
 const IP_PUERTO="http://localhost:3500"
 
 peticionGet = false;
 
+/**
+ * @Autor Ausias Bañuls Mahiques
+ * @param ninguno
+ * @return <Mediciones>
+ * @description Pedimos al backend todas la mediciones y las mostramos en la sección del html
+ */
 function obtenerTodasLasMediciones(){
 
     // Hacemos la petición get

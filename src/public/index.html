@@ -108,21 +108,10 @@
             </div>
             
             <div class="row mb-5"> <!-- fila de filtros init ***************************************************************** -->
-              <div class="btn-group col-12 col-lg-4" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" id="btnHoy" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnHoy">Hoy</label>
-              
-                <input type="radio" class="btn-check" name="btnradio" id="btnAyer" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnAyer">Ayer</label>
-              
-                <input type="radio" class="btn-check" name="btnradio" id="btnSemana" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnSemana">Semana</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btnMes" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnMes">Mes</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btnAno" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnAno">Año</label>
+              <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary">Left</button>
+                <button type="button" class="btn btn-outline-primary">Middle</button>
+                <button type="button" class="btn btn-outline-primary">Right</button>
               </div>
 
             </div> <!-- fila de filtros end ***************************************************************** -->
@@ -143,17 +132,35 @@
                 </div>
               </div>
               <div class="col-12 col-lg-3">
-                <div class="row border mb-3">
-                  <h5>Edificios públicos</h5>
-                  <h6><strong>Nombre del sitio</strong></h6>
-                  <h6>Hospitales</h6>
-                  <h6>Escuelas</h6>
-                  <h6>Ayuntamientos</h6>
+                <div class="row mb-3 py-3 border rounded">
+                  <h5 class="mb-4">Edificios públicos</h5>
+                  <div class="col-8">
+                    <h6><strong>Nombre del sitio</strong></h6>
+                    <h6>Hospitales</h6>
+                    <h6>Escuelas</h6>
+                    <h6>Ayuntamientos</h6>
+                  </div>
+                  <div class="col-3 d-flex justify-content-end">
+                    <h6><strong>ICA</strong></h6>
+                    <h6>6</h6>
+                    <h6>3</h6>
+                    <h6>10</h6>
+                  </div>
                 </div>
-                <div class="row border">
-                  <h5>Ciudades cercanas</h5>
-                  <h6><strong>Nombre del sitio</strong></h6>
-
+                <div class="row py-3 border rounded">
+                  <h5 class="mb-4">Ciudades cercanas</h5>
+                  <div class="col-8">
+                    <h6><strong>Nombre del sitio</strong></h6>
+                    <h6>Mislata</h6>
+                    <h6>Sueca</h6>
+                    <h6>Gandía</h6>
+                  </div>
+                  <div class="col-3 d-flex justify-content-end">
+                    <h6><strong>ICA</strong></h6>
+                    <h6>14</h6>
+                    <h6>25</h6>
+                    <h6>19</h6>
+                  </div>
                 </div>
               </div>
 

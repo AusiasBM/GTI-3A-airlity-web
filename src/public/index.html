@@ -13,31 +13,12 @@
   </head>
   <body>
 
-    <section class="container-fluid ps-5 pe-5">
+    <section class="container-fluid px-5">
 
-      <header class="row"> <!-- Header init ************************************************************* -->
-          <nav class="col navbar fixed-top navbar-expand-md navbar-light bg-light">
-              <a class="navbar-brand p-0 m-3 mt-0 mb-0" href="/index.html">
-                  <img src="img/logo.png" width="30" alt="logotipo Airlity"> Airlity
-              </a>
-              
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            
-              <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
-                <ul class="navbar-nav align-items-center">
-                  <li class="nav-item">
-                    <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa fa-bell icono"></i></a>
-                  </li>
-                  <li class="nav-item linea">
-                      <a class="nav-link" href="login.html"><i class="fa fa-user icono"></i></a>
-                      
-                  </li>
-                </ul>
-              </div>
-          </nav>
-      </header> <!-- Header end ************************************************************* -->
+      <!-- Nav init ************************************************************* -->
+      <nav id="menuPrincipal" class="navbar navbar-light bg-light fixed-top">
+        <!-- Contenido en menu.js -->
+      </nav><!-- Nav end ************************************************************* -->
 
       <!-- Banner de avisos init -->
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -126,37 +107,54 @@
               <h4>Resumen del aire</h4>
             </div>
             
-            <div class="row"> <!-- fila de filtros init ***************************************************************** -->
-              <div class="btn-group col-12 col-lg-4 border" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
+            <div class="row mb-5"> <!-- fila de filtros init ***************************************************************** -->
+              <div class="btn-group col-12 col-lg-4" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnHoy" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnHoy">Hoy</label>
               
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnAyer" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnAyer">Ayer</label>
               
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnSemana" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnSemana">Semana</label>
 
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio4">Radio 4</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnMes" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnMes">Mes</label>
 
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio5">Radio 5</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnAno" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnAno">Año</label>
               </div>
 
-              <div class="col-8 border">
-                <input type="date" id="start" name="trip-start"
-                      value="2021-11-11"
-                      min="2021-11-11" max="2022-12-31">
-              </div>
             </div> <!-- fila de filtros end ***************************************************************** -->
 
-            <div class="row border"> <!-- fila gráficas, ciudades y sitios init *********************************************** -->
-              <div class="col-9">
-                <canvas id="chartIca" class="charts"></canvas>
+            <div class="row"> <!-- fila gráficas, ciudades y sitios init *********************************************** -->
+              <div class="col-12 col-lg-9">
+                <div class="row">
+                  <canvas id="chartIca" height="200"></canvas>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <canvas id="chartIca1" height="100" class="col"></canvas>
+                  </div>
+                  <div class="col">
+                    <canvas id="chartIca2" height="100" class="col"></canvas>
+                  </div>
+                  
+                </div>
               </div>
-              <div class="col-3">
-                hola
+              <div class="col-12 col-lg-3">
+                <div class="row border mb-3">
+                  <h5>Edificios públicos</h5>
+                  <h6><strong>Nombre del sitio</strong></h6>
+                  <h6>Hospitales</h6>
+                  <h6>Escuelas</h6>
+                  <h6>Ayuntamientos</h6>
+                </div>
+                <div class="row border">
+                  <h5>Ciudades cercanas</h5>
+                  <h6><strong>Nombre del sitio</strong></h6>
+
+                </div>
               </div>
 
             </div> <!-- fila gráficas, ciudades y sitios end *********************************************** -->
@@ -183,6 +181,8 @@
     <script src="js/mapa.js"></script>
 
     <script src="js/graficas.js"></script>
+
+    <script src="js/menu.js"></script>
 
     <!-- Clave para el mapa de google maps -->
     <script async defer

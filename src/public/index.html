@@ -34,15 +34,15 @@
       <section class="row my-5 pt-5">
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> <!-- tabs init *********************************************************** -->
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-mapa-tab" data-bs-toggle="pill" data-bs-target="#pills-mapa" type="button" role="tab" aria-controls="pills-mapa" aria-selected="true">Mapa calidad del aire</button>
+            <button class="nav-link active" id="pills-mapa-tab" data-bs-toggle="pill" data-bs-target="#pills-mapa" type="button" role="tab" aria-controls="pills-mapa" aria-selected="true">Mapa calidad del aire</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-graficas-tab" data-bs-toggle="pill" data-bs-target="#pills-graficas" type="button" role="tab" aria-controls="pills-graficas" aria-selected="false">Gráficas</button>
+            <button class="nav-link " id="pills-graficas-tab" data-bs-toggle="pill" data-bs-target="#pills-graficas" type="button" role="tab" aria-controls="pills-graficas" aria-selected="false">Gráficas</button>
           </li>
         </ul> <!-- tabs end *********************************************************** -->
 
         <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade" id="pills-mapa" role="tabpanel" aria-labelledby="pills-mapa-tab">
+          <div class="tab-pane fade show active" id="pills-mapa" role="tabpanel" aria-labelledby="pills-mapa-tab">
               
             <div class="row"> <!-- Columna lateral izq tipos de gases init -->
               <div class="col-12 col-lg-3">
@@ -102,16 +102,21 @@
           </div> <!-- End tab Mapa de calidad del aire -->
             
           
-          <div class="tab-pane fade row show active" id="pills-graficas" role="tabpanel" aria-labelledby="pills-graficas-tab"> <!-- tab gráficas init -->
+          <div class="tab-pane fade row " id="pills-graficas" role="tabpanel" aria-labelledby="pills-graficas-tab"> <!-- tab gráficas init -->
             <div class="row">
               <h4>Resumen del aire</h4>
             </div>
             
             <div class="row mb-5"> <!-- fila de filtros init ***************************************************************** -->
-              <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <button type="button" class="btn btn-outline-primary">Left</button>
-                <button type="button" class="btn btn-outline-primary">Middle</button>
-                <button type="button" class="btn btn-outline-primary">Right</button>
+              <div class="btn-group col-lg-4" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio1">Hoy</label>
+              
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio2">Ayer</label>
+              
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio3">Esta semana</label>
               </div>
 
             </div> <!-- fila de filtros end ***************************************************************** -->

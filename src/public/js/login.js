@@ -1,23 +1,6 @@
 
 var URL = "http://localhost:3500";
 
-//var datos =  { nombreUsuario:"aitor", correo:"aitorrrr@gmail.com", contrasenya:"9876", telefono:6754 };
-
-// function login(){
-//     fetch(URL, {
-//         method: 'get',
-//         headers: {
-//             "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWUwNzNmOWExMGQzZmE5NGMwYzUwMSIsImlhdCI6MTYzNzg3ODExM30.Cq1qgZjErFhInduIpVUSdEK4cUdFWI72NygaTvpj6KI"
-//         },
-//     }).then(
-//         (resp) => console.log(resp.json())
-//     ).then(
-//         (res) => console.log(res)
-//     ).catch(
-//         (err) => console.log(err)
-//     );
-// }
-
 function login(evento){
     evento.preventDefault();
 

@@ -20,8 +20,12 @@ document.getElementById('menuPrincipal').innerHTML = `
                         <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="informacion.html">Información</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="login.html">Inicio de sesión</a>
                     </li>
+                    
                 </ul>
             </div>
         </div>

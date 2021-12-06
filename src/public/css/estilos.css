@@ -18,39 +18,87 @@ html{
     scroll-behavior: smooth;
 }
 
-.loginbg{
-    background-color: #1ab7c3;
+body{
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
+
+.container-fluid{ /* Esto lo ponemos para que el menú lateral de la landing page este totalmente pegado al borde */
+    padding: 0%;
+}
+
+.tab-content{
+    padding-left: 36vh;
+}
+
+.menu_lateral{
+    width: 34vh;
+    height: 100vh;
+    
+    position: fixed;
+}
+
+.nav-link, .login{
+    width: 200px;
+    height: 50px;
+}
+
 
 h1{
     font-size: 80px;
     font-weight: 700;
 }
+
+h2{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.logo {
+    width: 170px;
+    height: auto;
+}
+
+#map {
+    height: 600px;
+}
+
+.boton-recomendaciones{
+    text-decoration: none;
+    color: #111111;
+    width: auto;
+    font-size: 25px;
+    font-weight: 600;
+    border-bottom: #707070 1px solid;
+    margin-top: 50px;
+}
+
 /* Los estilos del botón los hemos puesto mediante bootstrap, aquí solo ponemos el tamaño */
+/*
 .btn{
     width: 300px;
     height: 60px;
 }
 
-#map {
-    height: 100%;
-}
+
 
 .icono{
     font-size: 2rem;
     color: #707070;
 }
-
-
-
+*/
 /*
 Login init
 */
-
-.logo {
-    width: 150px;
-    height: auto;
+/*
+.loginbg{
+    background-color: #1ab7c3;
 }
+
+
+
 
 .container {
     display: flex;
@@ -115,7 +163,7 @@ a {
 .boton-inicio:hover {
     background: #16737b;
 }
-
+*/
 /*
 Login end
 */
@@ -130,10 +178,19 @@ Login end
 
 }
 
-/* Aquí le decimos como será hasta que la página pase de 768px */
+/* Aquí le decimos como será hasta que la página pase de 992px */
 @media (max-width: 992px) {
 
     #map {
         height: 50rem;
     }
+}
+
+@media (max-width: 1200px) {
+
+  
+}
+
+@media (max-width: 1400px) {
+
 }

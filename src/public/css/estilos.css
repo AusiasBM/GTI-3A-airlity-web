@@ -36,7 +36,6 @@ body{
 .menu_lateral{
     width: 34vh;
     height: 100vh;
-    
     position: fixed;
 }
 
@@ -75,98 +74,6 @@ h2{
     margin-top: 50px;
 }
 
-/* Los estilos del botón los hemos puesto mediante bootstrap, aquí solo ponemos el tamaño */
-/*
-.btn{
-    width: 300px;
-    height: 60px;
-}
-
-
-
-.icono{
-    font-size: 2rem;
-    color: #707070;
-}
-*/
-/*
-Login init
-*/
-/*
-.loginbg{
-    background-color: #1ab7c3;
-}
-
-
-
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.container-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(225,225,225,0.8);
-    border-radius: 5px;
-    box-shadow: -5px -5px 20px rgba(0,0,0,0.5);
-    padding: 40px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-input {
-    display: block;
-    width: 300px;
-    height: 40px;
-    margin-bottom: 20px;
-    padding: 0 15px;
-    font-size: 18px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-}
-
-a {
-    text-decoration: none;
-}
-
-.boton-inicio {
-    width: 200px;
-    height: 40px;
-    border-radius: 5px;
-    background: var(--principal);
-    color: #fff;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: none;
-    text-align: center;
-    letter-spacing: 1pt;
-}
-
-.btn-outline-primary{
-    height: 3rem;
-    align-items: center;
-}
-
-.boton-inicio:hover {
-    background: #16737b;
-}
-*/
-/*
-Login end
-*/
 
 /* Aquí le decimos como será hasta que la página pase de 768px */
 @media (max-width: 768px) {

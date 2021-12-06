@@ -1,200 +1,447 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"> <!-- Página de iconos -->
-      <link rel="stylesheet" href="css/estilos.css">
-      <title>Airlity</title>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Airlity</title>
 
-      <!-- Ausias Bañuls Mahiques *****************  -->
-  </head>
-  <body>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"> <!-- Página de iconos -->
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
 
-    <section class="container-fluid px-5">
+</head>
+<body class="container-fluid d-flex bd-highlight">
 
-      <!-- Nav init ************************************************************* -->
-      <nav id="menuPrincipal" class="navbar navbar-light bg-light fixed-top">
+    <!-- Nav init ************************************************************* 
+    <nav id="menuPrincipal" class="navbar navbar-light bg-light fixed-top">
         <!-- Contenido en menu.js -->
-      </nav><!-- Nav end ************************************************************* -->
+    </nav><!-- Nav end ************************************************************* -->
 
-      <!-- Banner de avisos init -->
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-          <h5 id="offcanvasRightLabel">Notificaciones</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="menu_lateral bg-body shadow-lg ps-5 pt-3">
+        <a class="navbar-brand" href="index.html">
+            <img src="img/logo_airlity_hor.png" class="logo" alt="logotipo Airlity">
+        </a>
+
+        <div class="d-flex align-items-start mt-4">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio</button>
+              <button class="nav-link" id="v-mapa-tab" data-bs-toggle="pill" data-bs-target="#v-mapa" type="button" role="tab" aria-controls="v-mapa" aria-selected="false">Mapa</button>
+              <button class="nav-link" id="v-pills-recomendaciones-tab" data-bs-toggle="pill" data-bs-target="#v-pills-recomendaciones" type="button" role="tab" aria-controls="v-pills-recomendaciones" aria-selected="false">Recomendaciones</button>
+              <button class="nav-link" id="v-pills-sobreNosotros-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sobreNosotros" type="button" role="tab" aria-controls="v-pills-sobreNosotros" aria-selected="false">Sobre Nosotros</button>
+              <button class="nav-link btn login rounded-pill position-absolute bottom-0 mb-5" id="v-pills-login-tab" data-bs-toggle="pill" data-bs-target="#v-pills-login" type="button" role="tab" aria-controls="v-pills-login" aria-selected="false">Iniciar Sesión</button>
+            </div>
         </div>
-        <div class="offcanvas-body">
-          ...
+
+
+    </div>
+    
+    <div class="tab-content m-5 flex-fill" id="v-pills-tabContent">
+        <!-- Página de iniciao START ************************************************************************************************************************************************-->
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <h1>
+                AIRLITY
+            </h1>
+            
+            <div class="d-flex align-items-center">
+                <div>
+                    <h2>
+                        Tomar un respiro,<br>
+                        Sienta mejor
+                    </h2>
+                    <hr>
+                    <h5 class="lh-lg">
+                        Mida la calidad del aire, prediga la contaminación<br> 
+                        y planifique sus desplazamientos con su sensor personal<br> 
+                        de calidad del aire y su aplicación complementaria.
+                    </h5>
+                </div>
+                <img src="./img/flow-black-white.webp" style="height: 500px;" alt="logotipo Airlity">
+            
+            </div>
         </div>
-      </div> <!-- Banner de avisos end -->
+        <!-- Página de iniciao END -->
 
-      <section class="row my-5 pt-5">
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> <!-- tabs init *********************************************************** -->
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-mapa-tab" data-bs-toggle="pill" data-bs-target="#pills-mapa" type="button" role="tab" aria-controls="pills-mapa" aria-selected="true">Mapa calidad del aire</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link " id="pills-graficas-tab" data-bs-toggle="pill" data-bs-target="#pills-graficas" type="button" role="tab" aria-controls="pills-graficas" aria-selected="false">Gráficas</button>
-          </li>
-        </ul> <!-- tabs end *********************************************************** -->
+        <!-- Página de Mapa START ************************************************************************************************************************************************-->
+        <div class="tab-pane fade" id="v-mapa" role="tabpanel" aria-labelledby="v-mapa-tab">
+            <div class="row">
+                <p class="col">
+                    <img class="me-3" src="img/ica.gif" width="30" alt="logotipo GTI">
+                    ICA · 
+                    <span id="estadoIca">Moderado</span>
+                </p>
+                <p class="col">
+                    <img class="me-3" src="img/o3.png" width="30" alt="logotipo GTI">
+                    O3 · 
+                    <span id="estadoO3">Moderado</span>
+                </p>
+                <p class="col">
+                    <img class="me-3" src="img/so2.png" width="30" alt="logotipo GTI">
+                    SO2 · 
+                    <span id="estadoSo2">Moderado</span>
+                </p>
+                <p class="col">
+                    <img class="me-3" src="img/no2.png" width="30" alt="logotipo GTI">
+                    NO2 · 
+                    <span id="estadoNo2">Moderado</span>
+                </p>
+                <p class="col">
+                    <img class="me-3" src="img/co.png" width="30" alt="logotipo GTI">
+                    CO · 
+                    <span id="estadoCo">Moderado</span>
+                </p>
+            </div>
 
-        <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="pills-mapa" role="tabpanel" aria-labelledby="pills-mapa-tab">
-              
-            <div class="row"> <!-- Columna lateral izq tipos de gases init -->
-              <div class="col-12 col-lg-3">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item mt-3">
-                    <p>
-                      <img class="me-3" src="img/ica.gif" width="30" alt="logotipo GTI">
-                      ICA · 
-                      <span id="estadoIca">Moderado</span>
-                    </p>
-                  </li>
-                  <li class="list-group-item mt-3">
-                    <p>
-                      <img class="me-3" src="img/o3.png" width="30" alt="logotipo GTI">
-                      O3 · 
-                      <span id="estadoO3">Moderado</span>
-                    </p>
-                  </li>
-                  <li class="list-group-item mt-3">
-                    <p>
-                      <img class="me-3" src="img/so2.png" width="30" alt="logotipo GTI">
-                      SO2 · 
-                      <span id="estadoSo2">Moderado</span>
-                    </p>
-                  </li>
-                  <li class="list-group-item mt-3">
-                    <p>
-                      <img class="me-3" src="img/no2.png" width="30" alt="logotipo GTI">
-                      NO2 · 
-                      <span id="estadoNo2">Moderado</span>
-                    </p>
-                  </li>
-                  <li class="list-group-item mt-3">
-                    <p>
-                      <img class="me-3" src="img/co.png" width="30" alt="logotipo GTI">
-                      CO · 
-                      <span id="estadoCo">Moderado</span>
-                    </p>
-                  </li>
-                </ul>
+            <div class="mt-5"> <!-- Mapa de Google maps init -->
+                <div id ="map" class="shadow"> </div> 
+            </div> <!-- Mapa de Google maps end -->
+        </div>
+        <!-- Página de Mapa END-->
 
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Recomendaciones</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Calidad del aire</h6>
-                    <p class="card-text">La calidad del aire se considera poco saludable y puede causar un mayor agravamiento del corazón y los pulmones. Los grupos sensibles tienen un alto riesgo de experimentar efectos adversos para la salud por la contaminación del aire.</p>
+        <!-- Página de Recomendaciones START ************************************************************************************************************************************************-->
+        <div class="row tab-pane fade" id="v-pills-recomendaciones" role="tabpanel" aria-labelledby="v-pills-recomendaciones-tab">
+
+            <h1 class="row ">
+                Recomendaciones Calidad Del Aire
+            </h1>
+
+            <!-- Recomendaciones Partículas START ************************************************************************************************************************************************-->
+            <a class="row boton-recomendaciones" data-bs-toggle="modal" href="#modalParticulas" role="button">Partículas ( PM2.5 y PM10 )</a>
+
+            <div class="modal fade" id="modalParticulas" aria-hidden="true" aria-labelledby="modalCalidadAireLabel" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalCalidadAireLabel">Partículas ( PM2.5 y PM10 )</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Cómo afecta a la salud</h4>
+                        <hr>
+                        <p>
+                            Las elevadas concentraciones de Partículas en suspensión pueden provocar disminución de la función pulmonar, desencadenar una crisis asmática en las personas que padecen esta enfermedad o empeorar la situación clínica de los pacientes con problemas respiratorios o cardíacos, aumentando el número de urgencias e ingresos hospitalarios.  
+                        </p>
+
+                        <h4>Grupos vulnerables</h4>
+                        <hr>
+                        <p>Los grupos más afectados son:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Niños</strong>.</p>
+                            </li>
+                            <li>
+                                <p><strong>Ancianos</strong>.</p>
+                            </li>
+                            <li>
+                                <p>Enfermos con <strong>enfermedad respiratoria</strong> (asmáticos, bronquíticos crónicos) <strong>o cardíaca</strong>.</p>
+                            </li>
+                        </ul>
+                        
+                        <h4>Recomendaciones</h4>
+                        <hr>
+                        <p>
+                            Se recomienda a la población vulnerable que los días con elevada concentración de partículas en el aire evite o reduzca la realización de actividades que supongan esfuerzo físico al aire libre y busque atención sanitaria en caso de necesidad. En casos extremos puede ser prudente para estas personas permanecer en casa mientras dure el episodio de contaminación. 
+                        </p>
+                    </div>
+                    
                   </div>
                 </div>
-              </div>
+            </div>
+            <!-- Recomendaciones Partículas END-->
 
-              <div class="mt-5 col-12 col-lg-9"> <!-- Mapa de Google maps init -->
-                <div id ="map"> </div> 
-              </div> <!-- Mapa de Google maps end -->
+            <!-- Recomendaciones NO2 START ************************************************************************************************************************************************-->
+            <a class="row boton-recomendaciones" data-bs-toggle="modal" href="#modalNo2" role="button">Dióxido de nitrógeno (NO2)</a>
 
-            </div> <!-- Columna lateral izq tipos de gases end -->
+            <div class="modal fade" id="modalNo2" aria-hidden="true" aria-labelledby="modalCalidadAireLabel" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalCalidadAireLabel">Dióxido de nitrógeno (NO2)</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <h4>Cómo afecta a la salud</h4>
+                          <hr>
+                          <p>Los principales síntomas asociados a episodios de alta contaminación por dióxido de nitrógeno son:</p>
+                            <ul>
+                                <li>
+                                    <p>Picor de ojos, nariz y garganta.</p>
+                                </li>
+                                <li>
+                                    <p>Irritación de los bronquios con tos, flemas, dificultad para respirar.</p>
+                                </li>
+                            </ul>
+  
+                          <h4>Grupos vulnerables</h4>
+                          <hr>
+                          <p>Los niveles elevados de NO2 en el aire son perjudiciales para la salud, sobre todo para la de personas especialmente sensibles a este contaminante como:</p>
+                            <ul>
+                                <li>
+                                    <p><strong>Niños</strong>.</p>
+                                </li>
+                                <li>
+                                    <p><strong>Ancianos</strong>.</p>
+                                </li>
+                                <li>
+                                    <p>Personas con<strong> asma</strong>.</p>
+                                </li>
+                                <li>
+                                    <p>Pacientes con<strong> enfermedad cardiaca o respiratoria crónica</strong>.</p>
+                                </li>
+                            </ul>
+                          
+                          <h4>Recomendaciones</h4>
+                          <hr>
+                          <p>En episodios de alta contaminación, siga las siguientes recomendaciones:</p>
+                            <ul>
+                                <li>
+                                    <p>Permanezca el menor tiempo posible en las zonas de mayor contaminación como calles con mucho tráfico y zonas industriales.</p>
+                                </li>
+                                <li>
+                                    <p><strong>Evite practicar deporte y actividad física al aire libre</strong> a última hora de la tarde, cuando los niveles de NO2 son más altos.</p>
+                                </li>
+                                <li>
+                                    <p>Si se agrava su dificultad respiratoria, siente dolor torácico o le cuesta respirar <strong>acuda a su centro de salud</strong>.</p>
+                                </li>
+                            </ul>
+                      </div>
+                      
+                    </div>
+                </div>
+            </div>
+            <!-- Recomendaciones NO2 END-->
+        
+            <!-- Recomendaciones O3 START ************************************************************************************************************************************************-->
+            <a class="row boton-recomendaciones" data-bs-toggle="modal" href="#modalO3" role="button">Ozono (O3)</a>
 
-          </div> <!-- End tab Mapa de calidad del aire -->
+            <div class="modal fade" id="modalO3" aria-hidden="true" aria-labelledby="modalCalidadAireLabel" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCalidadAireLabel">Ozono (O3)</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Cómo afecta a la salud</h4>
+                        <hr>
+                        <p>Los posibles síntomas asociados a episodios de contaminación por ozono, entre otros, son:</p>
+                        <ul>
+                            <li>
+                                <p>Irritación ocular y de las vías respiratorias con tos, molestias de garganta, dolor torácico al respirar profundamente.</p>
+                            </li>
+                            <li>
+                                <p>Mayor dificultad para respirar con normalidad, sobre todo al hacer ejercicio.</p>
+                            </li>
+                            <li>
+                                <p>Mayor susceptibilidad a las infecciones respiratorias.</p>
+                            </li>
+                            <li>
+                                <p>Ataques de asma y agravamiento de ésta y otras enfermedades respiratorias, como el enfisema o la bronquitis crónica.</p>
+                            </li>
+                        </ul> 
+
+                        <h4>Grupos vulnerables</h4>
+                        <hr>
+                        <p>Los efectos nocivos del ozono pueden darse sobre todo en varios grupos de personas:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Niños</strong>: al tener un aparato respiratorio todavía inmaduro y pasar una gran parte del tiempo en verano jugando al aire libre.</p>
+                            </li>
+                            <li>
+                                <p>Personas con<strong> asma</strong> u otras enfermedades de las vías respiratorias: son más vulnerables y por lo general experimentan los efectos nocivos antes y con niveles de ozono más bajos.</p>
+                            </li>
+                            <li>
+                                <p>Personas sanas que por razones poco conocidas presentan una mayor <strong>susceptibilidad al ozono</strong>.</p>
+                            </li>
+                            <li>
+                                <p><strong>Adultos físicamente activos</strong> que hacen ejercicio o trabajan al aire libre: están más expuestos al ozono que las personas sedentarias.</p>
+                            </li>
+                        </ul>
+                        
+                        <h4>Recomendaciones</h4>
+                        <hr>
+                        <p>En el caso de producirse un episodio de alta contaminación por ozono troposférico <strong>deben evitarse</strong> o reducirse los <strong>esfuerzos físicos al aire libre</strong> mientras dure el episodio. Planee las actividades al aire libre cuando los niveles de ozono son menores, generalmente por la mañana. Acuda a un centro de salud en caso de dificultad respiratoria.
+                            Estas recomendaciones son especialmente importantes para los grupos antes citados.
+                        </p>
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <!-- Recomendaciones O3 END-->
+
+            <!-- Recomendaciones CO START ************************************************************************************************************************************************-->
+            <a class="row boton-recomendaciones" data-bs-toggle="modal" href="#modalCO" role="button">Monóxido de carbono (CO)</a>
+
+            <div class="modal fade" id="modalCO" aria-hidden="true" aria-labelledby="modalCalidadAireLabel" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCalidadAireLabel">Monóxido de carbono (CO)</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Cómo afecta a la salud</h4>
+                        <hr>
+                        <p>La inhalación e Intoxicación por monóxido de carbono produce que se emplace al oxígeno en el torrente sanguíneo por este gas. En consecuencia, la falta de oxígeno daña el corazón, el cerebro y otras partes del cuerpo.</p>
+                        <p>El principal riesgo de este tipo de intoxicación es que en muchos casos la persona no es consciente de los síntomas (entre ellos están dolor de cabeza, náuseas o vómitos, confusión, pérdida de conocimiento, convulsiones, estado de coma).</p>
+                  
+
+                        <h4>Grupos vulnerables</h4>
+                        <hr>
+                        <p>Los síntomas pueden variar de una persona a otra. Quienes tienen mayor riesgo de intoxicación son:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Niños</strong> pequeños.</p>
+                            </li>
+                            <li>
+                                <p><strong>Adultos</strong> mayores.</p>
+                            </li>
+                            <li>
+                                <p>Personas con <strong>enfermedades cardíacas y/o pulmonares</strong>.</p>
+                            </li>
+                            <li>
+                                <p><strong>Fumadores</strong>.</p>
+                            </li>
+                            <li>
+                                <p>Personas que habitan en <strong>zonas de gran altitud</strong>.</p>
+                            </li>
+                        </ul>
+                        
+                        <h4>Recomendaciones</h4>
+                        <hr>
+                        <p>Ante la sospecha de estar sufriendo intoxicación por monóxido de carbono:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Abrir ventanas y puertas</strong>.</p>
+                            </li>
+                            <li>
+                                <p><strong>Salir a tomar aire fresco</strong> inmediatamente.</p>
+                            </li>
+                            <li>
+                                <p><strong>Apagar</strong> los artefactos de <strong>gas</strong>.</p>
+                            </li>
+                            <li>
+                                <p>Acudir con urgencia a un <strong>centro de salud u hospital</strong> y/o comunicarse inmediatamente con un servicio de emergencias médicas.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <!-- Recomendaciones CO END-->
+
+            <!-- Recomendaciones SO2 START ************************************************************************************************************************************************-->
+            <a class="row boton-recomendaciones" data-bs-toggle="modal" href="#modalSO2" role="button">Dióxido de azufre (SO2)</a>
+
+            <div class="modal fade" id="modalSO2" aria-hidden="true" aria-labelledby="modalCalidadAireLabel" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCalidadAireLabel">Dióxido de azufre (SO2)</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Cómo afecta a la salud</h4>
+                        <hr>
+                        <p>Al respirar aire que contiene dióxido de azufre, éste pasa al interior del cuerpo a través de la nariz y los pulmones. Llega fácil y rápidamente a la corriente sanguínea a través de los pulmones. Una vez dentro del cuerpo, se degrada a sulfato y es excretado en la orina.</p>
+                        <p>La exposición a concentraciones más altas produce síntomas más graves, tales como disminución de la frecuencia respiratoria, inflamación o infección de las vías respiratorias y destrucción de áreas del pulmón.</p>           
+                  
+
+                        <h4>Grupos vulnerables</h4>
+                        <hr>
+                        <p>Los grupos más vulnerables al SO2 son:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Niños</strong>.</p>
+                            </li>
+                            <li>
+                                <p>Las <strong>personas asmáticas</strong> que hacen ejercicios físicos.</p>
+                            </li>
+                        </ul>
+                        
+                        <h4>Recomendaciones</h4>
+                        <hr>
+                        <p>Debido a que la ruta más probable de exposición al dióxido de azufre es respirar aire contaminado, se debe tratar de limitar las actividades al aire libre durante los períodos de mayor contaminación.</p>
+                        <p>Aunque los niveles de dióxido de azufre en el aire son normalmente más altos durante los meses de invierno, se ha demostrado que la exposición de los seres humanos es más alta durante los meses de verano.</p>
+                 
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <!-- Recomendaciones SO2 END-->
+
+        </div>
+        <!-- Página de Recomendaciones END-->
+
+        <!-- Página de Sobre nosotros START ************************************************************************************************************************************************-->
+        <div class="tab-pane fade" id="v-pills-sobreNosotros" role="tabpanel" aria-labelledby="v-pills-sobreNosotros-tab">
             
-          
-          <div class="tab-pane fade row " id="pills-graficas" role="tabpanel" aria-labelledby="pills-graficas-tab"> <!-- tab gráficas init -->
-            <div class="row">
-              <h4>Resumen del aire</h4>
+            <h1>
+                Porque hacemos lo que hacemos
+            </h1>
+
+            <div class="row mt-5">
+                <div class="col-7">
+                    <p>
+                        Cada año, en todas las fronteras de este planeta, la contaminación del aire causa más de 7 millones de muertes prematuras. La magnitud del problema debería inspirar un cambio radical, pero no es así.
+                    </p>
+        
+                    <p>
+                        ¿Por qué? Porque, al igual que los nuevos conocimientos sobre nuestro clima, los números causan angustia rápidamente, pero la inmediatez de la vida cotidiana los entierra rápidamente. Cada nuevo pico de contaminación provoca una nueva indignación, que rápidamente se extingue en la inacción a medida que avanza el ciclo de noticias. Nos preocupamos y esperamos el cambio, pero nos sentimos mal preparados para enfrentar un desafío demasiado complejo, más grande que nosotros, como si fuera un problema para otra persona o para otro momento.
+                    </p>
+        
+                    <p>
+                        Vemos un problema de información.
+                    </p>
+        
+                    <p>
+                        Vemos que con la información correcta en el momento adecuado, la sabiduría puede dominar el pánico. Y cuando la sabiduría tiene la ventaja, la urgencia del problema se puede canalizar hacia la imaginación de soluciones en lugar de finales.
+                    </p>
+                </div>
+                <div class="col-5 pt-5 bg-body shadow">
+                    <h2 class="text-primary text-center mt-5">7 000 000</h2>
+                    <hr class="bg-primary mx-5" style="border: blue 2px solid;">
+                    <h3 class="text-primary text-center">Cada año, la contaminación del aire causa más de 7 millones de muertes prematuras.</h3>
+                </div>
             </div>
             
-            <div class="row mb-5"> <!-- fila de filtros init ***************************************************************** -->
-              <div class="btn-group col-lg-4" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio1">Hoy</label>
-              
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio2">Ayer</label>
-              
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio3">Esta semana</label>
-              </div>
-
-            </div> <!-- fila de filtros end ***************************************************************** -->
-
-            <div class="row"> <!-- fila gráficas, ciudades y sitios init *********************************************** -->
-              <div class="col-12 col-lg-9">
-                <div class="row">
-                  <canvas id="chartIca" height="200"></canvas>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <canvas id="chartIca1" height="100" class="col"></canvas>
-                  </div>
-                  <div class="col">
-                    <canvas id="chartIca2" height="100" class="col"></canvas>
-                  </div>
-                  
-                </div>
-              </div>
-              <div class="col-12 col-lg-3">
-                <div class="row mb-3 py-3 border rounded">
-                  <h5 class="mb-4">Edificios públicos</h5>
-                  <div class="col-8">
-                    <h6><strong>Nombre del sitio</strong></h6>
-                    <h6>Hospitales</h6>
-                    <h6>Escuelas</h6>
-                    <h6>Ayuntamientos</h6>
-                  </div>
-                  <div class="col-3 d-flex justify-content-end">
-                    <h6><strong>ICA</strong></h6>
-                    <h6>6</h6>
-                    <h6>3</h6>
-                    <h6>10</h6>
-                  </div>
-                </div>
-                <div class="row py-3 border rounded">
-                  <h5 class="mb-4">Ciudades cercanas</h5>
-                  <div class="col-8">
-                    <h6><strong>Nombre del sitio</strong></h6>
-                    <h6>Mislata</h6>
-                    <h6>Sueca</h6>
-                    <h6>Gandía</h6>
-                  </div>
-                  <div class="col-3 d-flex justify-content-end">
-                    <h6><strong>ICA</strong></h6>
-                    <h6>14</h6>
-                    <h6>25</h6>
-                    <h6>19</h6>
-                  </div>
-                </div>
-              </div>
-
-            </div> <!-- fila gráficas, ciudades y sitios end *********************************************** -->
-
-          </div> <!-- gráficas end ***************************************************************-->
         </div>
-      </section>
-        
-    </section>
+        <!-- Página de Sobre nosotros END -->
+
+        <!-- Página de Sobre nosotros START ************************************************************************************************************************************************-->
+        <div class="tab-pane fade" id="v-pills-login" role="tabpanel" aria-labelledby="v-pills-login-tab">
+    
+            <h1>
+                Iniciar Sesión
+            </h1>
+
+            <form onsubmit="login(event)" id="login" method="post" class="bg-body shadow p-5">
+                <div class="form-floating mb-3 mt-5">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Correo</label>
+                  </div>
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Contraseña</label>
+                  </div>
+                <div id="textoErrorLogin"></div>
+                <button  type="submit" class="btn-lg btn-success mt-5" value="INGRESAR">ENTRAR</button>
+            </form>
 
 
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        </div>
+        <!-- Página de Sobre nosotros END -->
+    </div>
 
-    <!-- Librería para hacer gráficas -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script src="js/login.js"></script>
 
-    <!-- Lógica que nos permite comunicarnos con el backend -->
-    <script src="js/logicaFake.js"></script>
 
     <!-- Configuración Mapa de Google -->
     <script src="js/mapa.js"></script>
-
-    <script src="js/graficas.js"></script>
-
-    <script src="js/menu.js"></script>
 
     <!-- Clave para el mapa de google maps -->
     <script async defer
@@ -202,5 +449,10 @@
     </script>
 
 
-  </body>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        
+</body>
 </html>

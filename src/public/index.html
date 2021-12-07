@@ -26,11 +26,11 @@
 
         <div class="d-flex align-items-start mt-4">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio</button>
-              <button class="nav-link" id="v-mapa-tab" data-bs-toggle="pill" data-bs-target="#v-mapa" type="button" role="tab" aria-controls="v-mapa" aria-selected="false">Mapa</button>
-              <button class="nav-link" id="v-pills-recomendaciones-tab" data-bs-toggle="pill" data-bs-target="#v-pills-recomendaciones" type="button" role="tab" aria-controls="v-pills-recomendaciones" aria-selected="false">Recomendaciones</button>
-              <button class="nav-link" id="v-pills-sobreNosotros-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sobreNosotros" type="button" role="tab" aria-controls="v-pills-sobreNosotros" aria-selected="false">Sobre Nosotros</button>
-              <button class="nav-link btn login rounded-pill position-absolute bottom-0 mb-5" id="v-pills-login-tab" data-bs-toggle="pill" data-bs-target="#v-pills-login" type="button" role="tab" aria-controls="v-pills-login" aria-selected="false">Iniciar Sesión</button>
+              <button class="nav-link border-bottom mt-3 rounded-pill active"   id="v-pills-home-tab"               data-bs-toggle="pill" data-bs-target="#v-pills-home"                type="button" role="tab" aria-controls="v-pills-home"               aria-selected="true">Inicio</button>
+              <button class="nav-link border-bottom mt-3 rounded-pill"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa</button>
+              <button class="nav-link border-bottom mt-3 rounded-pill"          id="v-pills-recomendaciones-tab"    data-bs-toggle="pill" data-bs-target="#v-pills-recomendaciones"     type="button" role="tab" aria-controls="v-pills-recomendaciones"    aria-selected="false">Recomendaciones</button>
+              <button class="nav-link border-bottom mt-3 rounded-pill"          id="v-pills-sobreNosotros-tab"      data-bs-toggle="pill" data-bs-target="#v-pills-sobreNosotros"       type="button" role="tab" aria-controls="v-pills-sobreNosotros"      aria-selected="false">Sobre Nosotros</button>
+              <button class="btn btn-outline-primary login rounded-pill position-absolute bottom-0 mb-5" id="v-pills-login-tab" data-bs-toggle="pill" data-bs-target="#v-pills-login" type="button" role="tab" aria-controls="v-pills-login" aria-selected="false">Iniciar Sesión</button>
             </div>
         </div>
 
@@ -420,16 +420,17 @@
             </h1>
 
             <form onsubmit="login(event)" id="login" method="post" class="bg-body shadow p-5">
+                <div id="textoErrorLogin" class="text-center text-danger"></div>
                 <div class="form-floating mb-3 mt-5">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="label_correo" placeholder="name@example.com">
                     <label for="floatingInput">Correo</label>
-                  </div>
-                  <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="label_contrasenya" placeholder="Password">
                     <label for="floatingPassword">Contraseña</label>
-                  </div>
-                <div id="textoErrorLogin"></div>
-                <button  type="submit" class="btn-lg btn-success mt-5" value="INGRESAR">ENTRAR</button>
+                </div>
+                
+                <button  type="submit" class="btn btn-outline-success btn-lg mt-5" value="INGRESAR">ENTRAR</button>
             </form>
 
 

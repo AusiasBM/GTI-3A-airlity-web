@@ -1,5 +1,5 @@
 
-var URL = "http://localhost:3500";
+var URL = "http://217.76.155.97:3500";
 
 function login(evento){
     evento.preventDefault();
@@ -10,15 +10,17 @@ function login(evento){
         headers: {"correo": document.getElementById('label_correo').value, "contrasenya": document.getElementById('label_contrasenya').value},
     }).then(function (resp){
         console.log(resp.json())
+        
         if(resp.status == 200){
-            location.href = './app.html';
+            //location.href = './app.html';
         }else{
             document.getElementById('textoErrorLogin').innerHTML = `
                 <h6>Algo no está bién</h6>
             `
         }
+        return resp.json()
     }).then(
-        (res) => console.log(res)
+        //(res) => console.log(res)
     ).catch(
         (err) => console.log(err)
     );

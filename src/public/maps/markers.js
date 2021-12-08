@@ -7,9 +7,9 @@ markers = [
     },
     {
       "name": "Gandia",
-      "url": "https://www.google.com/maps/place/UPV+Campus+de+Gandia+-+Escuela+Politecnica+Superior/@38.9959757,-0.1658417,15z/data=!4m2!3m1!1s0x0:0xdb8ad87b84df4b24?sa=X&ved=2ahUKEwjbzO27vsz0AhVkAp0JHTdbCukQ_BJ6BAhYEAU",
-      "lat": 38.9959757,
-      "lng": -0.1658417
+      "url": "https://www.google.com/maps?ie=UTF8&daddr=38.96797739,-0.19109882&z=13&geocode=&dirflg=&saddr=&f=d&hl=es",
+      "lat": 38.96797739,
+      "lng": -0.19109882
     },
     {
       "name": "Valencia",
@@ -36,3 +36,21 @@ for ( var i=0; i < markers.length; ++i )
         .bindPopup( '<a href="' + markers[i].url + '" target="_blank" rel="noopener">' + markers[i].name + '</a>' )
         .addTo( map );
 }
+
+fetch('https://webcat-web.gva.es/webcat_web/datosOnlineRvvcca/obtenerTablaPestanyaDatosOnline', {
+  method: 'OPTIONS',
+  'Access-Control-Request-Method': 'POST'
+});
+
+fetch('https://webcat-web.gva.es/webcat_web/datosOnlineRvvcca/obtenerTablaPestanyaDatosOnline', {
+  method: 'POST', 
+  cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+  mode: 'cors', 
+  credentials: 'same-origin',
+  headers: {
+    'Content-Type': 'application/json',
+    'Cookie': 'JSESSIONID=xq_9mCR4QPyKQ4dhIacH3FAZ4IGdJwIVmYbpQRpD.CMA01; _ga=GA1.2.160489020.1638999253; _gid=GA1.2.1266667940.1638999253; __session:iframe-92826634:selectedTab=0; __session:0.6015672768928244:selectedTab=0; jbosscma7101=ffffffffaf17985c45525d5f4f58455e445a4a422d8d',
+    'Access-Control-Allow-Origin': '*'
+  },
+  body: '' // body data type must match "Content-Type" header
+}).then(r => r.json() ).then(console.log);

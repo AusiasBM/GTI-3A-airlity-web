@@ -30,12 +30,12 @@ body{
 }
 
 .tab-content{
-    padding-left: 36vh;
+    padding-left: 20rem;
 }
 
 .menu_lateral{
-    width: 34vh;
-    height: 100vh;
+    width: 20rem;
+    height: 100%;
     position: fixed;
 }
 

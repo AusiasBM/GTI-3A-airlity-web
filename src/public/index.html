@@ -31,11 +31,13 @@
 
         <div class="d-flex align-items-start mt-4">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <button class="nav-link border-bottom mt-3 rounded-pill active"   id="v-pills-home-tab"               data-bs-toggle="pill" data-bs-target="#v-pills-home"                type="button" role="tab" aria-controls="v-pills-home"               aria-selected="true">Inicio</button>
-              <button class="nav-link border-bottom mt-3 rounded-pill"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa</button>
-              <button class="nav-link border-bottom mt-3 rounded-pill"          id="v-pills-recomendaciones-tab"    data-bs-toggle="pill" data-bs-target="#v-pills-recomendaciones"     type="button" role="tab" aria-controls="v-pills-recomendaciones"    aria-selected="false">Recomendaciones</button>
-              <button class="nav-link border-bottom mt-3 rounded-pill"          id="v-pills-sobreNosotros-tab"      data-bs-toggle="pill" data-bs-target="#v-pills-sobreNosotros"       type="button" role="tab" aria-controls="v-pills-sobreNosotros"      aria-selected="false">Sobre Nosotros</button>
-              <button class="btn btn-outline-primary login rounded-pill position-absolute bottom-0 mb-5" id="v-pills-login-tab" data-bs-toggle="pill" data-bs-target="#v-pills-login" type="button" role="tab" aria-controls="v-pills-login" aria-selected="false">Iniciar Sesión</button>
+                <button class="nav-link shadow-sm mt-3 rounded-pill active"   id="v-pills-home-tab"               data-bs-toggle="pill" data-bs-target="#v-pills-home"                type="button" role="tab" aria-controls="v-pills-home"               aria-selected="true">Inicio</button>
+                <button class="nav-link shadow-sm mt-3 rounded-pill"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa</button>
+                <button class="nav-link shadow-sm mt-3 rounded-pill"          id="v-pills-recomendaciones-tab"    data-bs-toggle="pill" data-bs-target="#v-pills-recomendaciones"     type="button" role="tab" aria-controls="v-pills-recomendaciones"    aria-selected="false">Recomendaciones</button>
+                <button class="nav-link shadow-sm mt-3 rounded-pill"          id="v-pills-sobreNosotros-tab"      data-bs-toggle="pill" data-bs-target="#v-pills-sobreNosotros"       type="button" role="tab" aria-controls="v-pills-sobreNosotros"      aria-selected="false">Sobre Nosotros</button>
+                <button type="button" class="btn btn-outline-primary login rounded-pill position-absolute bottom-0 mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Iniciar Sesión
+                </button>
             </div>
         </div>
 
@@ -99,7 +101,14 @@
             </div>
 
             <div class="mt-5"> <!-- Mapa de Google maps init -->
-                <div id ="map" class="shadow"> </div> 
+                <div id="floating-panel">
+                    <button id="toggle-heatmap">Toggle Heatmap</button>
+                    <button id="change-gradient">Change gradient</button>
+                    <button id="change-radius">Change radius</button>
+                    <button id="change-opacity">Change opacity</button>
+                  </div>
+                  <div id="map" class="shadow"></div>
+
             </div> <!-- Mapa de Google maps end -->
         </div>
         <!-- Página de Mapa END-->
@@ -417,31 +426,40 @@
         </div>
         <!-- Página de Sobre nosotros END -->
 
-        <!-- Página de login START ************************************************************************************************************************************************-->
-        <div class="tab-pane fade" id="v-pills-login" role="tabpanel" aria-labelledby="v-pills-login-tab">
-    
-            <h1>
-                Iniciar Sesión
-            </h1>
-
-            <form onsubmit="login(event)" id="login" method="post" class="bg-body shadow p-5">
-                <div id="textoErrorLogin" class="text-center text-danger"></div>
-                <div class="form-floating mb-3 mt-5">
-                    <input type="email" class="form-control" id="label_correo" placeholder="name@example.com">
-                    <label for="floatingInput">Correo</label>
-                </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="label_contrasenya" placeholder="Password">
-                    <label for="floatingPassword">Contraseña</label>
-                </div>
-                
-                <button  type="submit" class="btn btn-outline-success btn-lg mt-5" value="INGRESAR">ENTRAR</button>
-            </form>
-
-
-        </div>
-        <!-- Página de login END -->
     </div>
+
+    <!-- Modal de inicio de sesión -->
+    <!-- Button trigger modal -->
+
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="login(event)" id="login" method="post">
+                    <div id="textoErrorLogin" class="text-center text-danger"></div>
+                    <div class="form-floating mb-3 shadow-sm">
+                        <input type="email" class="form-control" id="label_correo" placeholder="name@example.com">
+                        <label for="floatingInput">Correo</label>
+                    </div>
+                    <div class="form-floating  shadow-sm">
+                        <input type="password" class="form-control" id="label_contrasenya" placeholder="Password">
+                        <label for="floatingPassword">Contraseña</label>
+                    </div>
+                    <div class="modal-footer">
+                        <button  type="submit" class="btn btn-success btn-lg rounded-pill" value="INGRESAR">ENTRAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
 
     <script src="js/login.js"></script>
 
@@ -449,15 +467,19 @@
     <!-- Configuración Mapa de Google -->
     <script src="js/mapa.js"></script>
 
-    <!-- Clave para el mapa de google maps 
+    <!-- Clave para el mapa de google maps -->
     <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZCU2KPOv7bCOaxh6jguSW-KpSY_5sU3E&callback=initMap">
-    </script> -->
-
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZCU2KPOv7bCOaxh6jguSW-KpSY_5sU3E&callback=initMap&libraries=visualization&v=weekly"
+    ></script>
+<!--
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZCU2KPOv7bCOaxh6jguSW-KpSY_5sU3E&libraries=visualization">
+    </script>
+-->
     <!-- Archivos para mapa leaflet -->
-    <script type='text/javascript' src='maps/markers.json'></script>
+    <!--<script type='text/javascript' src='maps/markers.json'></script>
     <script type='text/javascript' src='maps/leaf-demo.js'></script>
-    <script type="text/javascript" src="maps/markers.js"></script>
+    <script type="text/javascript" src="maps/markers.js"></script>-->
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

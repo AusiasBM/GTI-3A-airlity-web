@@ -2,6 +2,7 @@
  * 
  * @Autor Ausias Bañuls Mahiques
  * 
+ * @description Este fichero contiene toda la lógica de del mapa, para que muestre todo el contenido.
  */
 
 /*

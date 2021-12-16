@@ -1,15 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>DASHBOARD</h1>
-    <script>
-        console.log(sessionStorage.getItem('token'));
-    </script>
-</body>
-</html>
+<!--
+
+    @Author Ausias Bañuls Mahiques
+
+    @description Este fichero contiene toda la landing page de Airlity
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="es">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta http-equiv="x-ua-compatible" content="ie=edge">
+     <title>Airlity - Dashboard</title>
+ 
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"> <!-- Página de iconos -->
+     <link rel="stylesheet" type="text/css" href="css/estilos.css">
+ 
+ </head>
+ <body class="container-fluid d-flex bd-highlight">
+ 
+     <!-- Nav init ************************************************************* 
+     <nav id="menuPrincipal" class="navbar navbar-light bg-light fixed-top">
+         <!-- Contenido en menu.js -->
+     </nav><!-- Nav end ************************************************************* -->
+ 
+     <div class="menu_lateral bg-body shadow-lg ps-5 pt-3">
+         <a class="navbar-brand" href="index.html">
+             <img src="img/logo_airlity_hor.png" class="logo" alt="logotipo Airlity">
+         </a>
+ 
+         <div class="d-flex align-items-start mt-4">
+             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                 <button class="nav-link shadow-sm mt-3 rounded-pill"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa</button>
+                 <button class="nav-link shadow-sm mt-3 rounded-pill invisible"          id="btn-dashboard"      data-bs-toggle="pill" data-bs-target="#v-pills-dashboard"       type="button" role="tab" aria-controls="v-pills-dashboard"      aria-selected="false">Dashboard</button>
+                 
+                <button type="button" onclick="cerrarSesion()" class="btn btn-outline-danger login rounded-pill position-absolute bottom-0 mb-5" id="btn-cerrarSesion">
+                    Cerrar Sesión
+                </button>
+             </div>
+         </div>
+     </div>
+     
+     <div class="tab-content m-5 flex-fill" id="v-pills-tabContent">
+
+         <!-- Página de Mapa START ************************************************************************************************************************************************-->
+         <div class="tab-pane fade" id="v-mapa" role="tabpanel" aria-labelledby="v-mapa-tab">
+             <div class="row">
+                 <p class="col">
+                     <img class="me-3" src="img/ica.gif" width="30" alt="logotipo GTI">
+                     ICA · 
+                     <span id="estadoIca">Moderado</span>
+                 </p>
+                 <p class="col">
+                     <img class="me-3" src="img/o3.png" width="30" alt="logotipo GTI">
+                     O3 · 
+                     <span id="estadoO3">Moderado</span>
+                 </p>
+                 <p class="col">
+                     <img class="me-3" src="img/so2.png" width="30" alt="logotipo GTI">
+                     SO2 · 
+                     <span id="estadoSo2">Moderado</span>
+                 </p>
+                 <p class="col">
+                     <img class="me-3" src="img/no2.png" width="30" alt="logotipo GTI">
+                     NO2 · 
+                     <span id="estadoNo2">Moderado</span>
+                 </p>
+                 <p class="col">
+                     <img class="me-3" src="img/co.png" width="30" alt="logotipo GTI">
+                     CO · 
+                     <span id="estadoCo">Moderado</span>
+                 </p>
+             </div>
+ 
+             <div class="mt-5"> <!-- Mapa de Google maps init -->
+                 <div id="floating-panel">
+                     <button id="toggle-heatmap">Toggle Heatmap</button>
+                     <button id="change-gradient">Change gradient</button>
+                     <button id="change-radius">Change radius</button>
+                     <button id="change-opacity">Change opacity</button>
+                   </div>
+                   <div id="map" class="shadow"></div>
+ 
+             </div> <!-- Mapa de Google maps end -->
+         </div>
+         <!-- Página de Mapa END-->
+ 
+         <!-- Página de Dashboard START ************************************************************************************************************************************************-->
+         <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
+     
+             <h1>
+                Tus Medidas
+             </h1>
+ 
+             <div class="row mt-5">
+ 
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto voluptate fugit repellendus odio aut! Voluptas accusamus esse veritatis quis, nostrum deserunt reiciendis optio quas dolore minus amet at nobis repudiandae.
+                    Incidunt minus tempore magnam nulla earum nihil voluptate esse, velit alias perspiciatis provident assumenda possimus tempora quos doloremque molestias mollitia quo illum itaque aliquid animi laudantium veniam. Ab, officiis nostrum.
+                    Dolore aut magni exercitationem deserunt laboriosam, eos cupiditate quia voluptas, corporis dolores dicta quis animi commodi ipsum? Quas, quis saepe, aut eum non rem reiciendis magni quam cum, laudantium harum?
+                    Non fuga cupiditate alias ex, eum atque vero ullam incidunt sapiente perferendis nostrum consequuntur, delectus corporis. Rem accusamus itaque ex, ut alias nemo, provident, architecto eaque qui quaerat doloribus eveniet?
+                    Qui unde fuga nulla. Nihil nulla, ut saepe voluptas dolorum aut esse commodi modi molestiae dicta laborum vel error iste beatae quis, voluptatem alias eveniet tenetur animi. Animi, doloribus molestias.
+                    Molestias, voluptas temporibus veritatis sint minima repellendus ipsam rerum minus repellat, error quaerat? Molestias at, fuga libero velit quis totam illo, quod voluptatibus fugit odio reiciendis a laudantium numquam eaque?
+                    Non accusantium eaque ex, temporibus esse ratione amet cupiditate tenetur, quaerat eius placeat consectetur aperiam qui voluptas libero! Laboriosam placeat nostrum voluptatibus, quis dolorem eum quas earum officia quisquam accusantium!
+                    Eaque cumque minus placeat, dolore fugiat qui ullam provident et? Doloribus error illo quasi quis neque sequi debitis consequatur adipisci dolores asperiores accusantium, quo sint corporis, fugit eligendi deleniti nisi.
+                    Obcaecati dignissimos suscipit repudiandae, distinctio recusandae eos. Aut nisi recusandae tempora tempore nulla voluptate doloribus. Quia iusto saepe iste, corrupti id non, deserunt, illo quisquam porro a dolore! Temporibus, facilis.
+                    Obcaecati maiores sequi, possimus debitis tempore expedita vitae! Quaerat perspiciatis consequuntur harum nulla rem! Explicabo fuga ab perspiciatis alias molestiae eligendi, impedit temporibus expedita nulla ex, nihil nostrum laudantium blanditiis.</p>
+                </div>
+                <div class="col-6">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est tempore quam nisi dicta deleniti magni aliquid odio quae adipisci, eligendi nam magnam molestiae cumque eum ea soluta, ipsam, placeat suscipit!
+                    Mollitia earum quasi voluptatibus quibusdam. Dolores in aliquid architecto beatae, quaerat tempore eius recusandae consequuntur voluptatem autem ipsum, placeat nihil veritatis aperiam consectetur commodi repudiandae optio enim? Ipsa, qui perferendis?
+                    Omnis dolores nulla placeat veritatis vero repellendus itaque dolore mollitia hic cumque corrupti ipsam, temporibus quam in quia amet ad officiis totam tempore aut error natus iure? Aperiam, harum reiciendis.
+                    Praesentium nam odit fugiat voluptatibus voluptas eveniet iste possimus officia esse sunt odio unde sed blanditiis expedita obcaecati assumenda corrupti, officiis modi aperiam tempora eos similique et. Praesentium, harum reprehenderit.
+                    Eligendi quod animi magnam at laudantium, veniam architecto omnis voluptas veritatis distinctio velit totam praesentium saepe eos voluptatibus beatae, mollitia esse, voluptates repellat deleniti. Veritatis ducimus sit atque quae unde?
+                    At, accusantium quis? Autem, repudiandae nulla. In sed voluptatem vero, error aliquam illo temporibus veniam harum neque recusandae eius laudantium perferendis fuga tempora tenetur dicta nostrum qui rem debitis ex!
+                    Inventore deserunt repellendus sunt ducimus quibusdam dolores ea vel nesciunt qui veniam ratione dolorum praesentium molestias quod tenetur eligendi sint optio eum similique illo dolor omnis at, asperiores recusandae. Adipisci?
+                    Inventore optio odio, voluptatibus cupiditate dolorum eligendi molestias, neque commodi pariatur ducimus maxime fuga delectus eum, eaque illo quasi quas error? Magnam dolorem vero fugit repellat, magni dolore ut sint.
+                    Exercitationem ad dolorum at saepe sapiente illo quisquam! Neque iste labore, dolore cumque dolorem autem animi quasi voluptatum placeat, eveniet saepe, ab eius sunt dolor aspernatur quis? Nihil, minima ad!
+                    Dolorum doloremque eius soluta, perferendis, deserunt eum sit reprehenderit nulla totam deleniti mollitia accusantium? Error neque placeat, eaque quis quos aspernatur. Officia nulla, at accusantium dolore dicta eligendi tempora minima.
+                </div>
+
+             </div>
+             
+         </div>
+         <!-- Página de Dashboard END -->
+ 
+ 
+     </div>
+ 
+
+     <script src="js/login.js"></script>
+
+     <script src="js/sesion.js">
+     </script> 
+ 
+     <!-- Configuración Mapa de Google -->
+     <script src="js/mapa.js"></script>
+ 
+     <!-- Clave para el mapa de google maps -->
+     <script async defer
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZCU2KPOv7bCOaxh6jguSW-KpSY_5sU3E&callback=initMap&libraries=visualization&v=weekly"
+     ></script>
+ 
+ 
+ 
+ <!--
+     <script type="text/javascript"
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZCU2KPOv7bCOaxh6jguSW-KpSY_5sU3E&libraries=visualization">
+     </script>
+ -->
+     <!-- Archivos para mapa leaflet -->
+     <!--<script type='text/javascript' src='maps/markers.json'></script>
+     <script type='text/javascript' src='maps/leaf-demo.js'></script>
+     <script type="text/javascript" src="maps/markers.js"></script>-->
+ 
+     <!-- Bootstrap -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+         
+ </body>
+ </html>

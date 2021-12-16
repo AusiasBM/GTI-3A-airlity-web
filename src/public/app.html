@@ -35,9 +35,10 @@
          <div class="d-flex align-items-start mt-4">
              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                  <button class="nav-link shadow-sm mt-3 rounded-pill"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa</button>
-                 <button class="nav-link shadow-sm mt-3 rounded-pill invisible"          id="btn-dashboard"      data-bs-toggle="pill" data-bs-target="#v-pills-dashboard"       type="button" role="tab" aria-controls="v-pills-dashboard"      aria-selected="false">Dashboard</button>
-                 
-                <button type="button" onclick="cerrarSesion()" class="btn btn-outline-danger login rounded-pill position-absolute bottom-0 mb-5" id="btn-cerrarSesion">
+                 <button class="nav-link shadow-sm mt-3 rounded-pill"          id="btn-dashboard"      data-bs-toggle="pill" data-bs-target="#v-pills-dashboard"       type="button" role="tab" aria-controls="v-pills-dashboard"      aria-selected="false">Dashboard</button>
+                 <button class="nav-link shadow-sm mt-3 rounded-pill"          id="btn-perfil"      data-bs-toggle="pill" data-bs-target="#v-pills-perfil"       type="button" role="tab" aria-controls="v-pills-perfil"      aria-selected="false">Perfil</button>
+                 <button class="nav-link shadow-sm mt-3 rounded-pill invisible"          id="btn-sensores"      data-bs-toggle="pill" data-bs-target="#v-pills-sensores"       type="button" role="tab" aria-controls="v-pills-sensores"      aria-selected="false">Sensores</button>
+                 <button type="button" onclick="cerrarSesion()" class="btn btn-outline-danger login rounded-pill position-absolute bottom-0 mb-5" id="btn-cerrarSesion">
                     Cerrar Sesión
                 </button>
              </div>
@@ -90,51 +91,130 @@
          <!-- Página de Mapa END-->
  
          <!-- Página de Dashboard START ************************************************************************************************************************************************-->
-         <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
+         <div class="tab-pane fade" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
      
              <h1>
                 Tus Medidas
              </h1>
- 
+            
              <div class="row mt-5">
  
                 <div class="col-6">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto voluptate fugit repellendus odio aut! Voluptas accusamus esse veritatis quis, nostrum deserunt reiciendis optio quas dolore minus amet at nobis repudiandae.
-                    Incidunt minus tempore magnam nulla earum nihil voluptate esse, velit alias perspiciatis provident assumenda possimus tempora quos doloremque molestias mollitia quo illum itaque aliquid animi laudantium veniam. Ab, officiis nostrum.
-                    Dolore aut magni exercitationem deserunt laboriosam, eos cupiditate quia voluptas, corporis dolores dicta quis animi commodi ipsum? Quas, quis saepe, aut eum non rem reiciendis magni quam cum, laudantium harum?
-                    Non fuga cupiditate alias ex, eum atque vero ullam incidunt sapiente perferendis nostrum consequuntur, delectus corporis. Rem accusamus itaque ex, ut alias nemo, provident, architecto eaque qui quaerat doloribus eveniet?
-                    Qui unde fuga nulla. Nihil nulla, ut saepe voluptas dolorum aut esse commodi modi molestiae dicta laborum vel error iste beatae quis, voluptatem alias eveniet tenetur animi. Animi, doloribus molestias.
-                    Molestias, voluptas temporibus veritatis sint minima repellendus ipsam rerum minus repellat, error quaerat? Molestias at, fuga libero velit quis totam illo, quod voluptatibus fugit odio reiciendis a laudantium numquam eaque?
-                    Non accusantium eaque ex, temporibus esse ratione amet cupiditate tenetur, quaerat eius placeat consectetur aperiam qui voluptas libero! Laboriosam placeat nostrum voluptatibus, quis dolorem eum quas earum officia quisquam accusantium!
-                    Eaque cumque minus placeat, dolore fugiat qui ullam provident et? Doloribus error illo quasi quis neque sequi debitis consequatur adipisci dolores asperiores accusantium, quo sint corporis, fugit eligendi deleniti nisi.
-                    Obcaecati dignissimos suscipit repudiandae, distinctio recusandae eos. Aut nisi recusandae tempora tempore nulla voluptate doloribus. Quia iusto saepe iste, corrupti id non, deserunt, illo quisquam porro a dolore! Temporibus, facilis.
-                    Obcaecati maiores sequi, possimus debitis tempore expedita vitae! Quaerat perspiciatis consequuntur harum nulla rem! Explicabo fuga ab perspiciatis alias molestiae eligendi, impedit temporibus expedita nulla ex, nihil nostrum laudantium blanditiis.</p>
+                    <h3>Listado de mediciones</h3>
+                    <button type="button" onclick="obtenerUltimasMediciones()" class="btn btn-dark login rounded" id="btn-cerrarSesion">
+                        Listar Mediciones
+                    </button>
+                    <hr>
+                    <div id="listaMediciones">
+                        
+                    </div>
                 </div>
+                
                 <div class="col-6">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est tempore quam nisi dicta deleniti magni aliquid odio quae adipisci, eligendi nam magnam molestiae cumque eum ea soluta, ipsam, placeat suscipit!
-                    Mollitia earum quasi voluptatibus quibusdam. Dolores in aliquid architecto beatae, quaerat tempore eius recusandae consequuntur voluptatem autem ipsum, placeat nihil veritatis aperiam consectetur commodi repudiandae optio enim? Ipsa, qui perferendis?
-                    Omnis dolores nulla placeat veritatis vero repellendus itaque dolore mollitia hic cumque corrupti ipsam, temporibus quam in quia amet ad officiis totam tempore aut error natus iure? Aperiam, harum reiciendis.
-                    Praesentium nam odit fugiat voluptatibus voluptas eveniet iste possimus officia esse sunt odio unde sed blanditiis expedita obcaecati assumenda corrupti, officiis modi aperiam tempora eos similique et. Praesentium, harum reprehenderit.
-                    Eligendi quod animi magnam at laudantium, veniam architecto omnis voluptas veritatis distinctio velit totam praesentium saepe eos voluptatibus beatae, mollitia esse, voluptates repellat deleniti. Veritatis ducimus sit atque quae unde?
-                    At, accusantium quis? Autem, repudiandae nulla. In sed voluptatem vero, error aliquam illo temporibus veniam harum neque recusandae eius laudantium perferendis fuga tempora tenetur dicta nostrum qui rem debitis ex!
-                    Inventore deserunt repellendus sunt ducimus quibusdam dolores ea vel nesciunt qui veniam ratione dolorum praesentium molestias quod tenetur eligendi sint optio eum similique illo dolor omnis at, asperiores recusandae. Adipisci?
-                    Inventore optio odio, voluptatibus cupiditate dolorum eligendi molestias, neque commodi pariatur ducimus maxime fuga delectus eum, eaque illo quasi quas error? Magnam dolorem vero fugit repellat, magni dolore ut sint.
-                    Exercitationem ad dolorum at saepe sapiente illo quisquam! Neque iste labore, dolore cumque dolorem autem animi quasi voluptatum placeat, eveniet saepe, ab eius sunt dolor aspernatur quis? Nihil, minima ad!
-                    Dolorum doloremque eius soluta, perferendis, deserunt eum sit reprehenderit nulla totam deleniti mollitia accusantium? Error neque placeat, eaque quis quos aspernatur. Officia nulla, at accusantium dolore dicta eligendi tempora minima.
+                    <div id="graficasMediciones">
+
+
+
+                    </div>
                 </div>
+                
 
              </div>
              
          </div>
          <!-- Página de Dashboard END -->
  
+        <!-- Página de Perfil START ************************************************************************************************************************************************-->
+        <div class="tab-pane fade" id="v-pills-perfil" role="tabpanel" aria-labelledby="v-pills-perfil-tab">
+
+            <h1 id="nombrePerfil">
+                Hola, 
+            </h1>
+
+
+            <div class="row bg-light rounded p-5 shadow mt-4">
+                <div class="col-6 my-3">
+                    <h3>Correo</h3>
+                    <p id="correoUsuario">ausiasbm@gmail.com</p>
+                </div>
+                <div class="col-6 my-3">
+                    <h3>Nombre</h3>
+                    <p id="nombreUsuario">ausiasbm</p>
+                </div>
+                <div class="col-6 my-3">
+                    <h3>Teléfono</h3>
+                    <p id="telefonoUsuario">a654765234</p>
+                </div>
+                <div class="col-6 my-3">
+                    <h3>Permisos</h3>
+                    <p id="rolUsuario">Usuario</p>
+                </div>
+                <div class="col-12 my-3">
+                    <h3>Mac Sensor</h3>
+                    <p id="macSensor">00:00:00:00</p>
+                </div>
+                
+            </div>
+
+            <script>
+                document.getElementById('nombrePerfil').innerHTML += `${sessionStorage.getItem('nombreUsuario')} `
+                document.getElementById('correoUsuario').innerHTML = `${sessionStorage.getItem('correo')} `
+                document.getElementById('nombreUsuario').innerHTML = `${sessionStorage.getItem('nombreUsuario')} `
+                document.getElementById('telefonoUsuario').innerHTML = `${sessionStorage.getItem('telefono')} `
+                document.getElementById('rolUsuario').innerHTML = `${sessionStorage.getItem('rol')} `
+                document.getElementById('macSensor').innerHTML = `${sessionStorage.getItem('macSensor')} `
+                //console.log(sessionStorage.getItem('nombreUsuario'))
+            </script>
+            
+        </div>
+        <!-- Página de Perfil END -->
  
+        <!-- Página de Sensores START ************************************************************************************************************************************************-->
+        <div class="tab-pane fade show active" id="v-pills-sensores" role="tabpanel" aria-labelledby="v-pills-sensores-tab">
+
+            <h1>
+                Sensores - Hola Admin
+            </h1>
+
+            <div class="row mt-5">
+ 
+                <div class="col-6">
+                    <h4>Listado sensores inactivos</h4>
+                    <button type="button" onclick="sensoresInactivos()" class="btn btn-dark login rounded" id="btn-cerrarSesion">
+                        Listar inactivos
+                    </button>
+                    <hr>
+                    <div id="listaInactivos">
+                        
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <h4>Listado sensores con datos erroneos</h4>
+                    <button type="button" onclick="informeSensores()" class="btn btn-dark login rounded" id="btn-cerrarSesion">
+                        Listar erroneos
+                    </button>
+                    <hr>
+                    <div id="listaDatosErroneos">
+                        
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        <!-- Página de Sensores END -->
+
      </div>
  
 
      <script src="js/login.js"></script>
 
-     <script src="js/sesion.js">
+     <script>
+
+        if(sessionStorage.getItem('rol') == 'Admin'){
+            document.querySelector('#btn-sensores').classList.replace('invisible', 'visible');
+        }
      </script> 
  
      <!-- Configuración Mapa de Google -->
@@ -145,7 +225,7 @@
          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZCU2KPOv7bCOaxh6jguSW-KpSY_5sU3E&callback=initMap&libraries=visualization&v=weekly"
      ></script>
  
- 
+     <script src="js/logicaFake.js"></script>
  
  <!--
      <script type="text/javascript"

@@ -23,11 +23,11 @@ function login(evento){
 
         sessionStorage.setItem('token', res.data.token); // write
         sessionStorage.setItem('correo', res.datosUsuario.correo);
-        sessionStorage.setItem('macSensor', res.data.macSensor);
-        sessionStorage.setItem('nombreUsuario', res.data.nombreUsuario);
-        sessionStorage.setItem('rol', res.data.rol);
-        sessionStorage.setItem('telefono', res.data.telefono);
-        sessionStorage.setItem('_id', res.data._id);
+        sessionStorage.setItem('macSensor', res.datosUsuario.macSensor);
+        sessionStorage.setItem('nombreUsuario', res.datosUsuario.nombreUsuario);
+        sessionStorage.setItem('rol', res.datosUsuario.rol);
+        sessionStorage.setItem('telefono', res.datosUsuario.telefono);
+        sessionStorage.setItem('_id', res.datosUsuario._id);
 
         location.href = './app.html';
     }).catch(

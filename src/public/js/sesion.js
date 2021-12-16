@@ -1,23 +1,18 @@
 
 
-console.log(sessionStorage.getItem('token'));
+//console.log(sessionStorage.getItem('token'));
 
 if(sessionStorage.getItem('token') != undefined){
     
-    var opcionDashboard = document.querySelector('#btn-dashboard');
-    opcionDashboard.classList.replace('invisible', 'visible');
+    document.querySelector('#btn-dashboard').classList.replace('invisible', 'visible');
 
-    var opcionIniciarSesion = document.querySelector('#btn-iniciarSesion');
-    opcionIniciarSesion.classList.replace('visible', 'invisible');
-
+    document.querySelector('#btn-iniciarSesion').classList.replace('visible', 'invisible');
     
 }else{
 
-    var opcionIniciarSesion = document.querySelector('#btn-iniciarSesion');
-    opcionIniciarSesion.classList.replace('invisible', 'visible');
+    document.querySelector('#btn-iniciarSesion').classList.replace('invisible', 'visible');
 
-    var opcionDashboard = document.querySelector('#btn-dashboard');
-    opcionDashboard.classList.replace('visible', 'invisible');
+    document.querySelector('#btn-dashboard').classList.replace('visible', 'invisible');
 
 }
 

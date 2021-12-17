@@ -39,14 +39,14 @@
 
         <div class="d-flex align-items-start mt-4">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <button class="nav-link shadow-sm mt-3 rounded-pill active"   id="v-pills-home-tab"               data-bs-toggle="pill" data-bs-target="#v-pills-home"                type="button" role="tab" aria-controls="v-pills-home"               aria-selected="true">Inicio</button>
-                <button class="nav-link shadow-sm mt-3 rounded-pill"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa</button>
-                <button class="nav-link shadow-sm mt-3 rounded-pill"          id="v-pills-recomendaciones-tab"    data-bs-toggle="pill" data-bs-target="#v-pills-recomendaciones"     type="button" role="tab" aria-controls="v-pills-recomendaciones"    aria-selected="false">Recomendaciones</button>
-                <button class="nav-link shadow-sm mt-3 rounded-pill"          id="v-pills-sobreNosotros-tab"      data-bs-toggle="pill" data-bs-target="#v-pills-sobreNosotros"       type="button" role="tab" aria-controls="v-pills-sobreNosotros"      aria-selected="false">Sobre Nosotros</button>
+                <button class="nav-link shadow mt-3 rounded active"   id="v-pills-home-tab"               data-bs-toggle="pill" data-bs-target="#v-pills-home"                type="button" role="tab" aria-controls="v-pills-home"               aria-selected="true">Inicio</button>
+                <button class="nav-link shadow mt-3 rounded"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa</button>
+                <button class="nav-link shadow mt-3 rounded"          id="v-pills-recomendaciones-tab"    data-bs-toggle="pill" data-bs-target="#v-pills-recomendaciones"     type="button" role="tab" aria-controls="v-pills-recomendaciones"    aria-selected="false">Recomendaciones</button>
+                <button class="nav-link shadow mt-3 rounded"          id="v-pills-sobreNosotros-tab"      data-bs-toggle="pill" data-bs-target="#v-pills-sobreNosotros"       type="button" role="tab" aria-controls="v-pills-sobreNosotros"      aria-selected="false">Sobre Nosotros</button>
              
-                <button type="button" class="nav-link shadow-sm mt-3 rounded-pill invisible" onclick="goDashboard()"          id="btn-dashboard" >Dashboard</button>
+                <button type="button" class="nav-link shadow mt-3 rounded invisible" onclick="goDashboard()"          id="btn-dashboard" >Dashboard</button>
                 
-                <button type="button" class="btn btn-outline-primary login rounded-pill position-absolute bottom-0 mb-5 visible" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btn-iniciarSesion"> 
+                <button type="button" class="btn btn-outline-dark login rounded position-absolute bottom-0 mb-5 visible" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btn-iniciarSesion"> 
                     Iniciar Sesión
                 </button>
             </div>
@@ -56,7 +56,7 @@
     </div>
     
     <div class="tab-content m-5 flex-fill" id="v-pills-tabContent">
-        <!-- Página de iniciao START ************************************************************************************************************************************************-->
+        <!-- Página de inicio START ************************************************************************************************************************************************-->
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
             <h1>
                 AIRLITY
@@ -79,7 +79,7 @@
             
             </div>
         </div>
-        <!-- Página de iniciao END -->
+        <!-- Página de inicio END -->
 
         <!-- Página de Mapa START ************************************************************************************************************************************************-->
         <div class="tab-pane fade" id="v-mapa" role="tabpanel" aria-labelledby="v-mapa-tab">
@@ -463,7 +463,7 @@
                             <label for="floatingPassword">Contraseña</label>
                         </div>
                         <div class="modal-footer">
-                            <button  type="submit" class="btn btn-success btn-lg rounded-pill" value="INGRESAR">ENTRAR</button>
+                            <button  type="submit" class="btn btn-dark btn-lg rounded" value="INGRESAR">ENTRAR</button>
                         </div>
                     </form>
                 </div>

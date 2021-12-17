@@ -23,11 +23,14 @@ function login(evento){
 
         sessionStorage.setItem('token', res.data.token); // write
         sessionStorage.setItem('correo', res.datosUsuario.correo);
+        sessionStorage.setItem('contrasenya', res.datosUsuario.contrasenya);
         sessionStorage.setItem('macSensor', res.datosUsuario.macSensor);
         sessionStorage.setItem('nombreUsuario', res.datosUsuario.nombreUsuario);
         sessionStorage.setItem('rol', res.datosUsuario.rol);
         sessionStorage.setItem('telefono', res.datosUsuario.telefono);
         sessionStorage.setItem('_id', res.datosUsuario._id);
+
+        
 
         location.href = './app.html';
     }).catch(

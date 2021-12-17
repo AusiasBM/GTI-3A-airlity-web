@@ -26,6 +26,8 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />   
 
+
+
  </head>
  <body class="container-fluid d-flex bd-highlight">
  
@@ -41,11 +43,11 @@
  
          <div class="d-flex align-items-start mt-4">
              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                 <button class="nav-link shadow-sm mt-3 rounded-pill active"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa</button>
-                 <button class="nav-link shadow-sm mt-3 rounded-pill"          id="btn-dashboard"      data-bs-toggle="pill" data-bs-target="#v-pills-dashboard"       type="button" role="tab" aria-controls="v-pills-dashboard"      aria-selected="false">Dashboard</button>
-                 <button class="nav-link shadow-sm mt-3 rounded-pill"          id="btn-perfil"      data-bs-toggle="pill" data-bs-target="#v-pills-perfil"       type="button" role="tab" aria-controls="v-pills-perfil"      aria-selected="false">Perfil</button>
-                 <button class="nav-link shadow-sm mt-3 rounded-pill invisible"          id="btn-sensores"      data-bs-toggle="pill" data-bs-target="#v-pills-sensores"       type="button" role="tab" aria-controls="v-pills-sensores"      aria-selected="false">Sensores</button>
-                 <button type="button" onclick="cerrarSesion()" class="btn btn-outline-danger login rounded-pill position-absolute bottom-0 mb-5" id="btn-cerrarSesion">
+                 <button class="nav-link shadow mt-3 rounded active"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa</button>
+                 <button class="nav-link shadow mt-3 rounded"          id="btn-dashboard"      data-bs-toggle="pill" data-bs-target="#v-pills-dashboard"       type="button" role="tab" aria-controls="v-pills-dashboard"      aria-selected="false">Dashboard</button>
+                 <button class="nav-link shadow mt-3 rounded"          id="btn-perfil"      data-bs-toggle="pill" data-bs-target="#v-pills-perfil"       type="button" role="tab" aria-controls="v-pills-perfil"      aria-selected="false">Perfil</button>
+                 <button class="nav-link shadow mt-3 rounded invisible"          id="btn-sensores"      data-bs-toggle="pill" data-bs-target="#v-pills-sensores"       type="button" role="tab" aria-controls="v-pills-sensores"      aria-selected="false">Sensores</button>
+                 <button type="button" onclick="cerrarSesion()" class="btn btn-outline-danger login rounded position-absolute bottom-0 mb-5" id="btn-cerrarSesion">
                     Cerrar Sesión
                 </button>
              </div>
@@ -55,7 +57,7 @@
      <div class="tab-content m-5 flex-fill" id="v-pills-tabContent">
 
          <!-- Página de Mapa START ************************************************************************************************************************************************-->
-         <div class="tab-pane fade" id="v-mapa" role="tabpanel" aria-labelledby="v-mapa-tab">
+         <div class="tab-pane fade show active" id="v-mapa" role="tabpanel" aria-labelledby="v-mapa-tab">
             <div class="row mb-3">
                  <p class="col">
                      <img class="me-3" src="img/ica.gif" width="30" alt="logotipo GTI">
@@ -91,7 +93,7 @@
             <div class="row my-4">
                 <h5 class="col-1">Filtros</h5>
                 <div class="col-4 dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                     Tipo de contamiante: Ninguno
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -127,7 +129,7 @@
          <!-- Página de Mapa END-->
  
          <!-- Página de Dashboard START ************************************************************************************************************************************************-->
-         <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
+         <div class="tab-pane fade" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
      
              <h1>
                 Tus Medidas

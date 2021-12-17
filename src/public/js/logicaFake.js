@@ -388,47 +388,6 @@ function estadisticasMedicionesUsuario(){
                 <p>${d}</p>
             `
 
-
-        // listaRespJson = res;
-        // num = 0;
-
-        // // Esto lo hacemos para cuando apretemos el botón compruebe si ya hay mediciones mostrandose.
-        // if(!peticionGet) // En caso de que hayan peticiones mostrandose, las limpia
-        //     document.getElementById('listaInactivos').innerHTML = ``;
-        // else // En caso de que no, pone que apartidir de ahora si.
-        //     peticionGet = true;
-        
-
-        // // Añadimos las mediciones al html
-        // listaRespJson.forEach(element => {
-
-        //     var d = new Date(element.fechaRegistro);
-
-        //     document.getElementById('listaInactivos').innerHTML += `
-
-        //         <div class="card border-primary mb-3 mw-100">
-        //             <div class="card-header">Medición ${num}</div>
-        //             <div class="card-body">
-        //                 <h6 class="card-title">correo Usuario: ${element.correoUsuario}</h6>
-        //                 <p> 
-        //                     fecha Registro = ${d.toLocaleDateString()}
-        //                     <br>
-        //                     macSensor = ${element.macSensor}
-        //                     <br>
-        //                     tipo Medicion = ${element.tipoMedicion}
-                            
-        //                 </p>
-        //             </div>
-        //         </div>
-            
-        //     `
-        //     num++;
-            
-        // });
-
-        // if(num == 0){
-        //     document.getElementById('listaInactivos').innerHTML += `<h3>No hay</h3>`
-        // }
     })
 
 }

@@ -29,6 +29,10 @@
          rotateControl: false // ocultar
    });
  
+  //  heatmap = new google.maps.visualization.HeatmapLayer({
+  //       data: listHeadPoints,
+  //       map: map,
+  //     });
  
    map.setTilt(0); // Forzar que siempre esté en la vista desde arriba.
 
@@ -60,11 +64,12 @@
  }
 
 
- peticionGet = false;
+peticionGet = false;
 var filtroTipo = 'Ninguno';
 let markers = [];
 let fechaIni;
 let fechaFin;
+let listHeadPoints = [];
 
 $(function() {
     $('input[name="daterange"]').daterangepicker({
@@ -152,11 +157,18 @@ function todasLasMediciones(){
             else if(filtroTipo == 'CO' && element.tipoMedicion == 'CO') crearMarker(element);
             else if(filtroTipo == 'IAQ') crearMarker(element);
           }
-            
-
+          //listHeadPoints.push(new google.maps.LatLng(element.latitud, element.longitud));
+          
         });
 
     })
+
+    initMap();
+
+}
+
+function crearHeadPoints(){
+
 
 
 }

@@ -61,7 +61,7 @@
 
 
  peticionGet = false;
-var filtroTipo = 'IAQ';
+var filtroTipo = 'Ninguno';
 let markers = [];
 let fechaIni;
 let fechaFin;
@@ -73,9 +73,12 @@ $(function() {
         format: 'DD-MM-YYYY'
         }
     }, function(start, end, label) {
-      fechaIni = new Date(start.format('DD-MM-YYYY')).getMilliseconds();
-      fechaFin = new Date(end.format('DD-MM-YYYY')).getMilliseconds();
-      console.log(fechaIni.toString())
+      fechaIni = Date.parse(start.format('DD-MM-YYYY')); // Pasar de fecha a milisegundos
+      fechaFin = Date.parse(end.format('DD-MM-YYYY'));
+      //fechaIni = new Date(start.format('DD-MM-YYYY')); // Pasar de fecha a milisegundos
+      //fechaFin = new Date(end.format('DD-MM-YYYY'));
+      console.log(fechaIni)
+      console.log(fechaFin)
       console.log( start.format('DD-MM-YYYY') + ' to ' + end.format('DD-MM-YYYY'));
       todasLasMediciones();
     });
@@ -140,11 +143,16 @@ function todasLasMediciones(){
         // Añadimos las mediciones al html
         listaRespJson.forEach(element => {
 
+          var d = new Date(element.fecha);
+          
+          if(+fechaIni <= +element.fecha){
             if(filtroTipo == 'SO2' && element.tipoMedicion == 'SO2') crearMarker(element);
             else if(filtroTipo == 'O3' && element.tipoMedicion == 'O3') crearMarker(element);
             else if(filtroTipo == 'NO2' && element.tipoMedicion == 'NO2') crearMarker(element);
             else if(filtroTipo == 'CO' && element.tipoMedicion == 'CO') crearMarker(element);
             else if(filtroTipo == 'IAQ') crearMarker(element);
+          }
+            
 
         });
 

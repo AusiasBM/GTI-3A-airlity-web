@@ -269,7 +269,7 @@ function datosGraficaUsuario(){
 
 
     // Hacemos la petición get
-    fetch(IP_PUERTO + '/datosGraficaUsuario?fechaIni=1637020800&fechaFin=1637193599', {
+    fetch(IP_PUERTO + '/datosGraficaUsuario', {
         method : 'get', 
         headers: {
             'Authorization': sessionStorage.getItem('token')
@@ -287,6 +287,108 @@ function datosGraficaUsuario(){
     .then((res) => {
         console.log(res); // Depuración
         
+        var datos = res.medias
+        var fechas = res.fechas
+
+        var fechasConvertidas = [];
+
+        console.log(datos)
+        console.log(fechas)
+
+        fechas.forEach(element => {
+            //console.log(element)
+            var d = new Date(element);
+
+            fechasConvertidas.push(d.toLocaleTimeString() + "");
+
+        });
+       
+        estadisticasMedicionesUsuario();
+        
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: fechasConvertidas,
+                datasets: [{
+                    label: 'CO',
+                    data: datos,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+
+    })
+
+}
+
+function estadisticasMedicionesUsuario(){
+
+
+    // Hacemos la petición get
+    fetch(IP_PUERTO + '/estadisticasMedicionesUsuario?fechaIni=1&fechaFin=1', {
+        method : 'get', 
+        headers: {
+            'Authorization': sessionStorage.getItem('token')
+        }
+    })
+    // Esperamos la respuesta
+    .then(function (respuesta) {
+        if(respuesta.status != 200){
+            document.getElementById('datosEstadisticos').innerHTML = `
+                    <h6>Algo no ha salido bien</h6>`
+        }
+        return respuesta.json();
+    })
+    // Trabajamos con la respuesta para mostrarla.
+    .then((res) => {
+        console.log(res); // Depuración
+        
+
+
+        console.log(res["valoracionCalidadAire"])
+
+        var d = new Date(res["tiempo"] - 3600000).toLocaleTimeString();
+
+        document.getElementById('datosEstadisticos').innerHTML += `
+
+                <h5>Datos Estadísticos</h5>
+                <hr>
+                <h6>Calidad del aire</h6>
+                <p>${res["valoracionCalidadAire"]}</p>
+                <h6>Valor medio</h6>
+                <p>${res["media"]}</p>
+                <h6>Valor máximo</h6>
+                <p>${res["valorMaximo"]}</p>
+                <h6>Tiempo que has estado midiendo</h6>
+                <p>${d}</p>
+            `
+
+
         // listaRespJson = res;
         // num = 0;
 
@@ -330,44 +432,3 @@ function datosGraficaUsuario(){
     })
 
 }
-
-
-
-// <script>
-// const ctx = document.getElementById('myChart').getContext('2d');
-// const myChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-//         datasets: [{
-//             label: '# of Votes',
-//             data: [12, 19, 3, 5, 2, 3],
-//             backgroundColor: [
-//                 'rgba(255, 99, 132, 0.2)',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//                 'rgba(75, 192, 192, 0.2)',
-//                 'rgba(153, 102, 255, 0.2)',
-//                 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             borderColor: [
-//                 'rgba(255, 99, 132, 1)',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)',
-//                 'rgba(153, 102, 255, 1)',
-//                 'rgba(255, 159, 64, 1)'
-//             ],
-//             borderWidth: 1
-//         }]
-//     },
-//     options: {
-//         scales: {
-//             y: {
-//                 beginAtZero: true
-//             }
-//         }
-//     }
-// });
-
-// </script>

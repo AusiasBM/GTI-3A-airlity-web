@@ -36,30 +36,7 @@ function initMap() {
  
    map.setTilt(0); // Forzar que siempre esté en la vista desde arriba.
 
-   const contentString =
-   '<div id="content">' +
-     "<p>Estación: <b>Gandia</b></p>" +
-     "<p>Código: 46131002 </p>" +
-     "<p>Dirección: Parc Alquería Nova </p>" +
-   "</div>";
 
-   const infowindow = new google.maps.InfoWindow({
-    content: contentString,
-  });
-
-  const marker = new google.maps.Marker({
-    position: {lat: 38.96797739, lng: -0.19109882},
-    map,
-    title: 'Estación de Gandia',
-  });
-
-  marker.addListener("click", () => {
-    infowindow.open({
-      anchor: marker,
-      map,
-      shouldFocus: false,
-    });
-  });
  
 
   medicionesOficiales();
@@ -232,13 +209,41 @@ function medicionesOficiales(){
         return respuesta.json();
     })
     // Trabajamos con la respuesta para mostrarla.
-    .then((res) => {
-        console.log(res); // Depuración
-        
+    .then((resp) => {
+        console.log(resp); // Depuración
+        res = resp[0];
+        var d = new Date(res['fecha']);
 
+        const contentString =
+        '<div id="content">' +
+          "<p>Estación: <b>" + res['poblacion'] + "</b></p>" +
+          "<p>Ciudad: " + res['ciudad'] + "</p>" +
+          "<p>Fecha - Hora: " + d.toLocaleString() + "</p>" +
+          "<p>ICA: " + res['mediciones'][0]['medida'] + "</p>" +
+          "<p>Temperatura: " + res['mediciones'][1]['medida'] + "</p>" +
+          "<p>Humedad: " + res['mediciones'][2]['medida'] + "</p>" +
+          "<p>Presión: " + res['mediciones'][3]['medida'] + "</p>" +
+        "</div>";
+     
+        const infowindow = new google.maps.InfoWindow({
+         content: contentString,
+       });
+     
+       const marker = new google.maps.Marker({
+         position: {lat: res['latitud'], lng: res['longitud']},
+         map,
+         title: 'Estación de Gandia',
+       });
+     
+       marker.addListener("click", () => {
+         infowindow.open({
+           anchor: marker,
+           map,
+           shouldFocus: false,
+         });
+       });
         
 
     })
 
-    initMap();
 }

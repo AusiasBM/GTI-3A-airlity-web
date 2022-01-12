@@ -4,10 +4,10 @@
  * 
  * @description Este fichero contiene toda la lógica de del mapa, para que muestre todo el contenido.
  */
-
+ const IP_PUERTO="http://localhost:3500"
 
  var map;
- function initMap() {
+function initMap() {
      
      // Creamos el mapa
      map = new google.maps.Map(document.getElementById('map'), {
@@ -61,6 +61,8 @@
     });
   });
  
+
+  medicionesOficiales();
  }
 
 
@@ -98,8 +100,6 @@ function tipoMedicion(tipo){
   if(filtroTipo == 'Ninguno') deleteMarkers()
   else todasLasMediciones();
 }
-
-
 
 function deleteMarkers() {
   for (let i = 0; i < markers.length; i++) {
@@ -166,11 +166,6 @@ function todasLasMediciones(){
     initMap();
 }
 
-function crearHeadPoints(){
-
-
-
-}
                 
 function crearMarker(element){
 
@@ -220,3 +215,30 @@ function crearMarker(element){
 }
 
 
+
+function medicionesOficiales(){
+
+
+    // Hacemos la petición get
+    fetch(IP_PUERTO + '/medidasOficiales', {
+        method : 'get',
+    })
+    // Esperamos la respuesta
+    .then(function (respuesta) {
+        if(respuesta.status != 200){
+            document.getElementById('errorFiltros').innerHTML = `
+                    Algo no ha salido bien`
+        }
+        return respuesta.json();
+    })
+    // Trabajamos con la respuesta para mostrarla.
+    .then((res) => {
+        console.log(res); // Depuración
+        
+
+        
+
+    })
+
+    initMap();
+}

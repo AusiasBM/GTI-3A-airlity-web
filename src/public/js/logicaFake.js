@@ -8,9 +8,16 @@ const IP_PUERTO="http://localhost:3500"
 peticionGet = false;
 
 /**
+ * 
+ * 
+ *    cantidad: N -->
+ *                       obtenerUltimasNMedciones() <--
+ *   [Medicion]   <--
+ * 
  * @Autor Ausias Bañuls Mahiques
- * @param ninguno
- * @return <Mediciones>
+ * @param cantidad: N canditad de mediciones que quiero recuperar
+ * @param callback:  forma en la que devuelvo las medicioes
+ * @return Promesa : les medicinoes es tornern dins de esta proms
  * @description Pedimos al backend todas la mediciones y las mostramos en la sección del html
  */
 function obtenerUltimasMediciones(){
@@ -60,7 +67,7 @@ function obtenerUltimasMediciones(){
                                 <br>
                                 Tipo de medición = ${element.tipoMedicion}
                                 <br>
-                                Fecha = ${d.toLocaleDateString()}
+                                Fecha = ${d.toLocaleString()}
                                 <br>
                                 Latitud = ${element.latitud}
                                 <br>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mapa interpolado</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                font-family:Verdana, Geneva, Tahoma, sans-serif
+            }
+            html, body, #map, #mapIca, #mapO3 {
+                height: 100%;
+                width: 100%;
+            }
+            #leyenda{
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                width: 200px;
+                height: auto;
+                z-index: 1000;
+            }
+            #filtros{
+                background-color: white;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+                padding: 10px;
+                border-radius: 10px;
+            }
+            .rango{
+                width: auto;
+                height: 50px;
+                color: white;
+                border-radius: 10px;
+                margin-top: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            h5{
+                background-color: white;
+                border-radius: 10px;
+                padding: 10px;
+                box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+            }
+
+            /* Aquí le decimos como será hasta que la página pase de 768px */
+            @media (max-width: 768px) {
+
+                #leyenda{
+                    display:none;
+                }
+
+            }
+        </style>
+
+    </head>
+    <body>
+        
+        <div id="leyenda">	
+            <h5>Leyenda</h5>
+            <div class="rango" style="background-color: rgb(237, 228, 180	); color: black">Buena</div>
+            <div class="rango" style="background-color: yellow; color: black">Aceptable</div>
+            <div class="rango" style="background-color: orange;">Mala</div>
+            <div class="rango" style="background-color: red;">Muy Mala</div>
+            <div class="rango" style="background-color: blue;">Extremadamente Mala</div>
+        </div>
+        
+        <div id="mapIca"></div>
+    
+    </body>
+
+
+    <script src="./js/leaflet-idw.js"></script>
+    <script src="./js/exampledata.js"></script>
+    <script>
+            
+        var map = L.map('mapIca').setView([38.996508, -0.166106], 15);
+
+        var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(map);
+
+        // Icon posicón user
+        var iconoAzul = L.icon({
+            iconUrl: './img/posUser.png',
+            iconSize:     [30, 30], // size of the icon
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+        var upv = L.marker([ 38.996508, -0.166106]).addTo(map);
+        upv.bindPopup("<b>UPV Gandia</b>");
+
+       
+
+        // Interpolación
+        var idw = L.idwLayer(addressPoints,{
+                opacity: 0.3,
+                maxZoom: 18,
+                cellSize: 4,
+                exp: 2,
+                max: 100,
+            }).addTo(map);
+        
+    </script>
+ 
+</html>

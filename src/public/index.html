@@ -39,7 +39,8 @@
         <div class="d-flex align-items-start mt-4">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <button class="nav-link shadow mt-3 rounded active"   id="v-pills-home-tab"               data-bs-toggle="pill" data-bs-target="#v-pills-home"                type="button" role="tab" aria-controls="v-pills-home"               aria-selected="true">Inicio</button>
-                <button class="nav-link shadow mt-3 rounded"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa</button>
+                <button class="nav-link shadow mt-3 rounded"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa Histórico</button>
+                <button class="nav-link shadow mt-3 rounded"          id="v-mapaInterpolacion-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapaInterpolacion"                      type="button" role="tab" aria-controls="v-mapaInterpolacion"                     aria-selected="false">Mapa Interpolación</button>
                 <button class="nav-link shadow mt-3 rounded"          id="v-pills-recomendaciones-tab"    data-bs-toggle="pill" data-bs-target="#v-pills-recomendaciones"     type="button" role="tab" aria-controls="v-pills-recomendaciones"    aria-selected="false">Recomendaciones</button>
                 <button class="nav-link shadow mt-3 rounded"          id="v-pills-sobreNosotros-tab"      data-bs-toggle="pill" data-bs-target="#v-pills-sobreNosotros"       type="button" role="tab" aria-controls="v-pills-sobreNosotros"      aria-selected="false">Sobre Nosotros</button>
              
@@ -57,12 +58,12 @@
     <div class="tab-content m-5 flex-fill" id="v-pills-tabContent">
         <!-- Página de inicio START ************************************************************************************************************************************************-->
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-            <h1>
+            <h1 class="mb-5">
                 AIRLITY
             </h1>
             
             <div class="d-flex align-items-center">
-                <div>
+                <div class="me-5">
                     <h2>
                         Tomar un respiro,<br>
                         Sienta mejor
@@ -74,7 +75,7 @@
                         de calidad del aire y su aplicación complementaria.
                     </h5>
                 </div>
-                <img src="./img/flow-black-white.webp" style="height: 500px;" alt="logotipo Airlity">
+                <img src="./img/sensor.png" style="height: 400px;" class="ms-5 mt-4" alt="logotipo Airlity">
             
             </div>
         </div>
@@ -111,13 +112,49 @@
             </div>
 
             <div class="mt-5"> <!-- Mapa de Google maps init -->
-                <!-- <div id="floating-panel">
-                    <button id="toggle-heatmap">Toggle Heatmap</button>
-                    <button id="change-gradient">Change gradient</button>
-                    <button id="change-radius">Change radius</button>
-                    <button id="change-opacity">Change opacity</button>
-                  </div> -->
+                
                   <div id="map" class="shadow"></div>
+
+            </div> <!-- Mapa de Google maps end -->
+        </div>
+        <!-- Página de Mapa END-->
+
+        <!-- Página de Mapa Interpolación START ************************************************************************************************************************************************-->
+        <div class="tab-pane fade" id="v-mapaInterpolacion" role="tabpanel" aria-labelledby="v-mapaInterpolacion-tab">
+            <div class="row">
+                <p class="col">
+                    <img class="me-3" src="img/ica.gif" width="30" alt="logotipo GTI">
+                    ICA · 
+                    <span id="estadoIca">Moderado</span>
+                </p>
+                <p class="col">
+                    <img class="me-3" src="img/o3.png" width="30" alt="logotipo GTI">
+                    O3 · 
+                    <span id="estadoO3">Moderado</span>
+                </p>
+                <p class="col">
+                    <img class="me-3" src="img/so2.png" width="30" alt="logotipo GTI">
+                    SO2 · 
+                    <span id="estadoSo2">Moderado</span>
+                </p>
+                <p class="col">
+                    <img class="me-3" src="img/no2.png" width="30" alt="logotipo GTI">
+                    NO2 · 
+                    <span id="estadoNo2">Moderado</span>
+                </p>
+                <p class="col">
+                    <img class="me-3" src="img/co.png" width="30" alt="logotipo GTI">
+                    CO · 
+                    <span id="estadoCo">Moderado</span>
+                </p>
+            </div>
+
+            <div class="mt-5"> <!-- Mapa de Google maps init -->
+                <iframe
+                    title="Mapa"
+                    width="100%"
+                    src="./mapaIAQ.html" style="height: 35rem">
+                </iframe>
 
             </div> <!-- Mapa de Google maps end -->
         </div>
@@ -477,20 +514,16 @@
     <script src="js/sesion.js"></script> 
 
     <!-- Configuración Mapa de Google -->
-    <script src="js/mapa.js"></script>
+     <script src="js/mapa.js"></script> 
+
 
     <!-- Clave para el mapa de google maps -->
-    <script async defer
+    <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZCU2KPOv7bCOaxh6jguSW-KpSY_5sU3E&callback=initMap&libraries=visualization&v=weekly"
+        async
     ></script>
 
 
-
-<!--
-    <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZCU2KPOv7bCOaxh6jguSW-KpSY_5sU3E&libraries=visualization">
-    </script>
--->
     <!-- Archivos para mapa leaflet -->
     <!--<script type='text/javascript' src='maps/markers.json'></script>
     <script type='text/javascript' src='maps/leaf-demo.js'></script>

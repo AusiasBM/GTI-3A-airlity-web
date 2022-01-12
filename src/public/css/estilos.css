@@ -60,7 +60,7 @@ h2{
     height: auto;
 }
 
-#map {
+#map, #mapInterpolacion {
     height: 600px;
 }
 

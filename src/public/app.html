@@ -43,7 +43,8 @@
  
          <div class="d-flex align-items-start mt-4">
              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                 <button class="nav-link shadow mt-3 rounded active"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa</button>
+                 <button class="nav-link shadow mt-3 rounded active"          id="v-mapa-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapa"                      type="button" role="tab" aria-controls="v-mapa"                     aria-selected="false">Mapa Histórico</button>
+                 <button class="nav-link shadow mt-3 rounded"          id="v-mapaInterpolado-tab"                     data-bs-toggle="pill" data-bs-target="#v-mapaInterpolado"                      type="button" role="tab" aria-controls="v-mapaInterpolado"                     aria-selected="false">Mapa Interpolado</button>
                  <button class="nav-link shadow mt-3 rounded"          id="btn-dashboard"      data-bs-toggle="pill" data-bs-target="#v-pills-dashboard"       type="button" role="tab" aria-controls="v-pills-dashboard"      aria-selected="false">Dashboard</button>
                  <button class="nav-link shadow mt-3 rounded"          id="btn-perfil"      data-bs-toggle="pill" data-bs-target="#v-pills-perfil"       type="button" role="tab" aria-controls="v-pills-perfil"      aria-selected="false">Perfil</button>
                  <button class="nav-link shadow mt-3 rounded invisible"          id="btn-sensores"      data-bs-toggle="pill" data-bs-target="#v-pills-sensores"       type="button" role="tab" aria-controls="v-pills-sensores"      aria-selected="false">Sensores</button>
@@ -57,7 +58,7 @@
      <div class="tab-content m-5 flex-fill" id="v-pills-tabContent">
 
          <!-- Página de Mapa START ************************************************************************************************************************************************-->
-         <div class="tab-pane fade show active" id="v-mapa" role="tabpanel" aria-labelledby="v-mapa-tab">
+         <div class="tab-pane fade" id="v-mapa" role="tabpanel" aria-labelledby="v-mapa-tab">
             <div class="row mb-3">
                  <p class="col">
                      <img class="me-3" src="img/ica.gif" width="30" alt="logotipo GTI">
@@ -127,7 +128,71 @@
              </div> <!-- Mapa de Google maps end -->
          </div>
          <!-- Página de Mapa END-->
- 
+        
+        <!-- Página de Mapa Interpolado START ************************************************************************************************************************************************-->
+        <div class="tab-pane fade show active" id="v-mapaInterpolado" role="tabpanel" aria-labelledby="v-mapaInterpolado-tab">
+            <div class="row mb-3">
+                <p class="col">
+                    <img class="me-3" src="img/ica.gif" width="30" alt="logotipo GTI">
+                    ICA · 
+                    <span id="estadoIca">Moderado</span>
+                </p>
+                <p class="col">
+                    <img class="me-3" src="img/o3.png" width="30" alt="logotipo GTI">
+                    O3 · 
+                    <span id="estadoO3">Moderado</span>
+                </p>
+                <p class="col">
+                    <img class="me-3" src="img/so2.png" width="30" alt="logotipo GTI">
+                    SO2 · 
+                    <span id="estadoSo2">Moderado</span>
+                </p>
+                <p class="col">
+                    <img class="me-3" src="img/no2.png" width="30" alt="logotipo GTI">
+                    NO2 · 
+                    <span id="estadoNo2">Moderado</span>
+                </p>
+                <p class="col">
+                    <img class="me-3" src="img/co.png" width="30" alt="logotipo GTI">
+                    CO · 
+                    <span id="estadoCo">Moderado</span>
+                </p>
+            </div>
+
+            <hr>
+
+
+            
+            <div class="row my-4">
+                <h5 class="col-1">Filtros</h5>
+                <div class="col-4 dropdown">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenu3" data-bs-toggle="dropdown" aria-expanded="false">
+                    Tipo de contamiante: IAQ
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                    <!-- <li><button class="dropdown-item" type="button" onclick="tipoMapa('Ninguno')">Ninguno</button></li> -->
+                    <li><button class="dropdown-item" type="button" onclick="tipoMapa('IAQ')">IAQ</button></li>
+                    <!-- <li><button class="dropdown-item" type="button" onclick="tipoMapa('SO2')"">SO2</button></li> -->
+                    <li><button class="dropdown-item" type="button" onclick="tipoMapa('O3')"">O3</button></li>
+                    <!-- <li><button class="dropdown-item" type="button" onclick="tipoMapa('NO2')"">NO2</button></li>
+                    <li><button class="dropdown-item" type="button" onclick="tipoMapa('CO')"">CO</button></li> -->
+                    </ul>
+                </div>
+
+            </div>
+            
+            <p id="errorFiltros"></p>
+
+            <hr>
+
+            <div class="mt-3"> <!-- Mapa de Google maps init -->
+                
+                <div id="mapInterpolado" class="shadow"></div>
+
+            </div> <!-- Mapa de Google maps end -->
+        </div>
+        <!-- Página de Mapa interpolado END-->
+
          <!-- Página de Dashboard START ************************************************************************************************************************************************-->
          <div class="tab-pane fade" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
      
@@ -272,6 +337,41 @@
  
      <script src="js/logicaFake.js"></script>
  
+     <script>
+
+        document.getElementById('mapInterpolado').innerHTML = ` 
+        <iframe
+            title="Mapa"
+            width="100%"
+            src="./mapaIAQ.html" style="height: 35rem">
+        </iframe> `
+
+        function tipoMapa(tipo){
+
+            filtroTipo = tipo;
+            document.getElementById('dropdownMenu3').innerHTML = `Tipo contaminante: ${tipo}`;
+            console.log(tipo)
+            if(tipo == 'IAQ'){
+                document.getElementById('mapInterpolado').innerHTML = ` 
+                <iframe
+                    title="Mapa"
+                    width="100%"
+                    src="./mapaIAQ.html" style="height: 35rem">
+                </iframe> `
+            }else{
+                if(tipo == 'O3'){
+                    document.getElementById('mapInterpolado').innerHTML = ` 
+                    <iframe
+                        title="Mapa"
+                        width="100%"
+                        src="./mapaO3.html" style="height: 35rem">
+                    </iframe> `
+                }
+            }
+          }
+     </script>
+
+
  <!--
      <script type="text/javascript"
          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZCU2KPOv7bCOaxh6jguSW-KpSY_5sU3E&libraries=visualization">
